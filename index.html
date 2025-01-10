@@ -3,52 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        img {
-            max-width: 100%; /* ensures the image is responsive and doesn’t exceed the width of its container */
-            height: auto; /* maintains the aspect ratio */
-            border-radius: 50%; /* keeps the rounded appearance */
-            margin-bottom: 20px;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <img src="andrew.jpg" alt="Profile Picture" style="width: 300px;"> <!-- Example width increase -->
-        <h1>Andrew Jorge</h1>
-        <button onclick="window.open('https://colab.research.google.com/drive/1bDZ3_uJgxnHnBg01Ix-NzMzWjbqTV1jX?usp=sharing', '_blank')">Transfer Learning Project</button>
-        <button onclick="window.open('https://github.com/ajorge2/Andrew-Projects', '_blank')">Other Projects</button>
-    </div>
+    <nav class="navbar">
+        <div class="logo">YourName</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+            <p class="subtitle">Full Stack Developer</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <!-- Project Card Template -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="project1.jpg" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h3>Project Name</h3>
+                    <p class="tech-stack">React • Node.js • MongoDB</p>
+                    <p class="project-description">Brief project description goes here...</p>
+                    <div class="project-links">
+                        <a href="#" class="button">Live Demo</a>
+                        <a href="#" class="button">GitHub</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Your compelling story and background...</p>
+            <div class="skills">
+                <h3>Technical Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <!-- Add more skills -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-links">
+                <a href="mailto:your@email.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/yourprofile"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/yourusername"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
