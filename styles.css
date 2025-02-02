@@ -105,11 +105,31 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    padding: 2rem;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-content h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.tech-stack {
+    margin: 0 0 1.5rem 0;
+    color: #666;
+}
+
+.project-description {
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+}
+
+.project-links {
+    margin-top: auto;
 }
 
 /* About Section */
