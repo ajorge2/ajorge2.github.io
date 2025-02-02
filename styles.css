@@ -104,12 +104,17 @@ body {
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e0e0e0;  /* Light grey border */
+    border-radius: 8px;  /* Rounded corners */
+    background: white;  /* Ensures card has a solid background */
+    padding: 2rem;  /* Maintains spacing inside the card */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     color: inherit;
+    border: 1px solid #d0d0d0;  /* Slightly darker border on hover */
 }
 
 .project-card:visited {
