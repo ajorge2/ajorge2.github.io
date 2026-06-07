@@ -730,12 +730,57 @@
 
       <div class="item">
         <div class="item-meta-col">
+          2026
+          <span class="meta-label">Dev tooling</span>
+        </div>
+        <div class="col-content">
+          <span class="item-title">
+            <span class="item-num">02</span>
+            <a href="https://site--codearchitect--74wvcb9qzxr6.code.run/" target="_blank" rel="noopener">CodeArchitect</a>
+          </span>
+          <div class="item-stack">
+            Node · Express · React · Vite · tree-sitter · Anthropic API
+          </div>
+          <div class="item-body">
+            <p>
+              An interactive tool for reading a codebase by its structure. Every file is
+              parsed into a tree and drawn as nested, selectable pieces — function, block,
+              expression — over the source, with a single slider that zooms continuously
+              from whole-file down to individual tokens, re-chunking live as you drag.
+            </p>
+            <p>
+              Each piece carries a stable identity derived from the tree rather than the
+              current zoom, so understanding accumulates across re-chunking instead of being
+              discarded. Meanings are computed recursively and cached against those
+              identities — a snippet's standalone meaning is computed once and reused
+              wherever it recurs, and different slicings of a file share their common
+              ancestors — then folded with surrounding scope up through the folder tree, so
+              an answer about a single line can draw on the whole project.
+            </p>
+            <p>
+              Question-answering is retrieval the user steers: the selected piece is the
+              unit, so there is no vector database — the access pattern is exact-key lookup
+              along one path, not similarity search. The meaning cache is content-addressed
+              and therefore self-invalidating (edited code yields new keys; stale entries are
+              simply never read again), backed by a plain on-disk file with an in-memory
+              layer rather than any standing service.
+            </p>
+          </div>
+          <div class="item-links">
+            <a href="https://site--codearchitect--74wvcb9qzxr6.code.run/" target="_blank" rel="noopener">Live demo</a>
+            <a href="https://github.com/ajorge2/code-viewer-demo" target="_blank" rel="noopener">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-meta-col">
           2025
           <span class="meta-label">Open source</span>
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">02</span>
+            <span class="item-num">03</span>
             <a href="https://site--orcview--764vq9x779wv.code.run/" target="_blank" rel="noopener">OrcView</a>
           </span>
           <div class="item-stack">
@@ -769,7 +814,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">03</span>
+            <span class="item-num">04</span>
             <a href="https://learning-accelerator.vercel.app/" target="_blank" rel="noopener">Learning Accelerator</a>
           </span>
           <div class="item-stack">
@@ -804,7 +849,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">04</span>
+            <span class="item-num">05</span>
             <a href="https://github.com/ajorge2/ETL-agent-pipeline" target="_blank" rel="noopener">ETL Agent Pipeline</a>
           </span>
           <div class="item-stack">
