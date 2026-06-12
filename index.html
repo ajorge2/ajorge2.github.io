@@ -388,6 +388,50 @@
     }
     .item-links a:hover::after { transform: scaleX(1); }
 
+    /* ---------- course list (education) ---------- */
+    .course-list {
+      margin: 22px 0 0;
+    }
+    .course-list dt {
+      font-family: var(--font-display);
+      font-weight: 460;
+      font-variation-settings: "opsz" 32, "SOFT" 40;
+      font-size: 16px;
+      letter-spacing: -0.012em;
+      color: var(--fg);
+      margin-top: 20px;
+      padding-left: 18px;
+      position: relative;
+    }
+    .course-list dt:first-of-type { margin-top: 0; }
+    .course-list dt::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 8px;
+      height: 1px;
+      background: var(--warm);
+    }
+    .course-list dd {
+      margin: 6px 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.62;
+      max-width: 62ch;
+    }
+    .course-more {
+      margin: 24px 0 0 18px;
+      font-size: 12.5px;
+      color: var(--subtle);
+      letter-spacing: 0.02em;
+    }
+    .course-more strong {
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
     /* ---------- skills ---------- */
     .skills-grid {
       display: grid;
@@ -600,7 +644,7 @@
       <div class="header-content">
         <h1>Andrew Jorge</h1>
         <div class="meta">
-          New York City
+          San Francisco
           <span class="sep">·</span>
           <a href="mailto:andrewjorge.jobs@gmail.com">andrewjorge.jobs@gmail.com</a>
           <span class="sep">·</span>
@@ -614,19 +658,19 @@
 
     <div class="intro">
       <p>
-        Software engineer in NYC. Bowdoin '25, CS and Math. Currently at Stone Point
-        Capital, where I build LLM tooling that investment and capital markets teams
+        Software engineer in San Francisco. Bowdoin '25, CS and Math. Most recently at Stone Point
+        Capital, where I built LLM tooling that investment and capital markets teams
         use on live deals. I'm most interested in problems where the data and the
         interface matter as much as the model.
       </p>
     </div>
 
     <section>
-      <h2><span class="h2-num">01</span><span class="h2-rule"></span>Experience</h2>
+      <h2><span class="h2-num">01</span><span class="h2-rule"></span>Experience &amp; Education</h2>
 
       <div class="item">
         <div class="item-meta-col">
-          Mar 2026<br/>Present
+          Mar 2026<br/>May 2026
           <span class="meta-label">Internship</span>
         </div>
         <div class="col-content">
@@ -634,24 +678,74 @@
           <div class="item-role">Technology Intern</div>
           <div class="item-body" style="margin-top: 16px;">
             <p>
-              Built a lender diligence Q&amp;A retrieval tool now used by the Capital
-              Markets team on active PE deals. Two-tier retrieval: a flattened markdown
-              corpus serves matched historical questions; a helper-file fallback handles
-              novel ones; every answer cites its source.
+              Built an interactive assumption tester for the private equity valuation
+              team: analysts slide pricing and entry/exit variables and watch valuation,
+              leveraged-buyout returns, and assumption drift recompute in ~1ms — spanning
+              49 pricing-assumption combinations, 36 entry-and-exit combinations, and 5
+              model versions, with a browser-side Excel upload and field-tagging that
+              streamlines translation into CSV. Demoed it to a VP, who deemed it
+              fit-for-purpose.
             </p>
             <p>
-              Built an earnings report summarizer for the investment team, conditioned
-              on prior analyst-written summaries so output matches house style. That's
-              the difference between a tool analysts adopt and one they ignore.
+              Built a lender diligence Q&amp;A retrieval tool now used by the Capital
+              Markets team on active PE deals — exact citations served from cache before
+              touching raw sources, so every answer is traceable. Shipped an earnings
+              report summarizer for the investment team, conditioned on 20+ prior
+              analyst-written summaries so output matches house style — the difference
+              between a tool analysts adopt and one they ignore.
             </p>
             <p>
               Built a working RAG prototype over internal IT documentation: hybrid
-              BM25 + dense retrieval, RRF fusion, cross-encoder reranking, and a
-              post-LLM confidence gate scored against the chunks the model actually
-              cited. Designed an evaluation framework that auto-generates synthetic
-              test inputs and scores outputs via LLM-as-judge.
+              BM25 + FAISS dense retrieval fused by reciprocal rank fusion, a
+              cross-encoder second pass that re-reads the top 40 passages and keeps the 5
+              most relevant, and a confidence gate that declines below 0.60 — scored
+              against the chunks the model actually cited. Designed a RAGAS evaluation
+              framework over a labeled Q&amp;A set (10% deliberately declinable) to
+              catch over-confident answers.
             </p>
           </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-meta-col">
+          Aug 2021<br/>May 2025
+          <span class="meta-label">Education</span>
+        </div>
+        <div class="col-content">
+          <div class="item-title">Bowdoin College</div>
+          <div class="item-role">B.A., Computer Science &amp; Mathematics — double major · Brunswick, ME</div>
+          <div class="item-body" style="margin-top: 16px;">
+            <p>
+              A few courses that shaped how I build — less the syllabus, more what stuck:
+            </p>
+          </div>
+          <dl class="course-list">
+            <dt>Mathematical Principles of Machine Learning</dt>
+            <dd>
+              The linear algebra, optimization, and probability beneath modern ML —
+              empirical risk minimization, backpropagation, and the universal-approximation
+              results that explain why architectures from transformers to graph neural
+              networks actually work, not just how to call them.
+            </dd>
+            <dt>Operating Systems</dt>
+            <dd>
+              Processes, synchronization, virtual memory, and file systems — implemented
+              from scratch in C. Where my instinct for concurrency, isolation, and
+              crash-recoverable state comes from, and why it shows up in the lock-free
+              cycle detection and idempotent loaders elsewhere on this page.
+            </dd>
+            <dt>Artificial Intelligence</dt>
+            <dd>
+              Intelligent agents, informed search and game theory, reinforcement learning,
+              and the arc from classical methods to deep learning — implementing decision
+              trees, classifiers, and neural networks up from problem spaces rather than
+              importing them.
+            </dd>
+          </dl>
+          <p class="course-more">
+            <strong>Further coursework</strong> &nbsp; Deep Learning in Computer Vision · Statistics · Optimization
+          </p>
         </div>
       </div>
     </section>
@@ -682,20 +776,27 @@
           <div class="item-body">
             <p>
               A point-in-time credit stress monitor for 13 financial-services sub-sectors,
-              deployed end-to-end on Northflank and Vercel. Dual-timestamp Postgres
-              (observation_date + vintage_date) eliminates look-ahead bias from FRED
-              revisions, so every dashboard query can be replayed exactly as the data
-              looked on any historical date.
+              deployed end-to-end on Northflank and Vercel. ~25,000 macro observations
+              from FRED and yfinance, carrying full revision history back to 1990 and
+              updating live. Dual-timestamp Postgres eliminates look-ahead bias from FRED
+              revisions, so the stress picture for any past date is rebuilt using only the
+              data published by then — never peeking at the future.
             </p>
             <p>
-              Per-sector indicator weights are derived empirically via paired OLS
-              regressions against equity-drawdown and credit-composite proxies, so a
-              live alpha slider blends between credit and equity weight regimes at
-              query time.
+              182 per-sector indicator weights, each derived empirically via OLS
+              regression and exposed as a live slider, so the model can be re-weighted
+              and replayed at query time.
             </p>
             <p>
-              ~5,000-line vanilla JS dashboard over a 20-endpoint FastAPI backend.
-              Ingestion from FRED, yfinance, FDIC BankFind, and SEC EDGAR through
+              Designed an entity-resolution pipeline across FDIC and SEC EDGAR to
+              assemble a dataset no single source publishes: 71 bank acquisitions
+              enriched with real deal prices, resolved out of ~11,300 merger records.
+              Then validated a deal-pricing model out-of-sample — trained on pre-2020
+              deals, tested on later ones — and reported the honest null: macro
+              conditions alone do not predict deal pricing (R² ≈ 0.09).
+            </p>
+            <p>
+              ~5,000-line vanilla JS dashboard over a 20-endpoint FastAPI backend, with
               idempotent, crash-recoverable loaders.
             </p>
           </div>
@@ -744,9 +845,12 @@
           <div class="item-body">
             <p>
               An interactive tool for reading a codebase by its structure. Every file is
-              parsed into a tree and drawn as nested, selectable pieces — function, block,
-              expression — over the source, with a single slider that zooms continuously
-              from whole-file down to individual tokens, re-chunking live as you drag.
+              parsed via tree-sitter into nested, selectable pieces — function, block,
+              expression — drawn over the source and chunked live, aware of structure
+              boundaries down to a single character. Three sliders shape the slicing:
+              granularity (how deep to split), depth spread (how far apart the chosen
+              depths may sit), and sub-split (how far to keep splitting under a word-count
+              cap).
             </p>
             <p>
               Each piece carries a stable identity derived from the tree rather than the
@@ -763,7 +867,8 @@
               along one path, not similarity search. The meaning cache is content-addressed
               and therefore self-invalidating (edited code yields new keys; stale entries are
               simply never read again), backed by a plain on-disk file with an in-memory
-              layer rather than any standing service.
+              layer rather than any standing service. Two distinct Anthropic models are
+              routed by the weight of each read/write request.
             </p>
           </div>
           <div class="item-links">
@@ -788,16 +893,21 @@
           </div>
           <div class="item-body">
             <p>
-              An observability layer for LLM agents. Real-time ReAct visualization,
-              hierarchical drill-down into nested sub-agent runs, and SSE streaming of
-              every state transition, tool call, and model response.
+              An observability layer and SDK for LLM agents that turns any Python
+              function into a tool, building its schema from type hints and the docstring.
+              Real-time ReAct visualization and SSE streaming log every event — 10 kinds
+              in all, tool calls, model calls, errors — with cost tracked to $0.000001.
+              Any sub-agent opens in under 50ms over a single live connection, however
+              deeply nested, cutting failure root-cause to under two minutes.
             </p>
             <p>
-              Cycle detection threads an immutable frozenset call chain through every
-              sub-agent invocation, preventing recursive loops without locks and
-              without blocking parallel sub-agent execution. SQLite persists versioned
-              run history with config snapshots, so agent behavior can be compared
-              across model, prompt, and tool changes.
+              O(1) cycle detection threads an immutable frozenset call chain through every
+              sub-agent invocation, preventing recursive loops without locks and without
+              blocking parallel sub-agents; config is snapshotted at run start so mid-flight
+              edits never corrupt a run. SQLite persists versioned run history, so agent
+              behavior can be compared across model, prompt, and tool changes. Hardened on
+              a data-analyst agent (7 tools, 3 chart types) that decides on its own when a
+              chart conveys more than prose — 5,700 LOC, zero build steps.
             </p>
           </div>
           <div class="item-links">
@@ -890,6 +1000,8 @@
         <dd>TypeScript, JavaScript, React, Svelte, D3.js, Vite</dd>
         <dt>Infra</dt>
         <dd>AWS, Northflank, Vercel, Git, Docker Compose</dd>
+        <dt>Tooling</dt>
+        <dd>Claude Code, Claude Agent Skills, Cursor, Custom GPTs</dd>
         <dt>Other</dt>
         <dd>SQL, Java, C, C++, R</dd>
       </dl>
