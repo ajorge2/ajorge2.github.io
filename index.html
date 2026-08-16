@@ -64,31 +64,11 @@
     main {
       max-width: 960px;
       margin: 0 auto;
-      padding: 88px 40px 144px;
+      padding: 72px 40px 144px;
       position: relative;
       z-index: 1;
     }
     .col-content { min-width: 0; }
-
-    /* A compact running head makes the page feel like a record of work, not a landing page. */
-    .folio-header {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 24px;
-      align-items: center;
-      padding: 11px 0 10px;
-      margin-bottom: 44px;
-      border-top: 1px solid var(--fg);
-      border-bottom: 1px solid var(--rule-strong);
-      color: var(--muted);
-      font-family: var(--font-mono);
-      font-size: 9px;
-      line-height: 1;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
-    .folio-header span:nth-child(2) { color: var(--fg); }
-    .folio-header span:last-child { text-align: right; }
 
     /* ---------- header ---------- */
     header {
@@ -582,8 +562,6 @@
 
     /* ---------- responsive ---------- */
     @media (max-width: 760px) {
-      .folio-header { grid-template-columns: 1fr auto; }
-      .folio-header span:last-child { display: none; }
       .item { grid-template-columns: 1fr; gap: 12px; }
       .item:not(:last-child)::after { left: 0; }
       .item-meta-col { padding-top: 8px; }
@@ -607,11 +585,6 @@
 </head>
 <body>
   <main>
-    <div class="folio-header" aria-label="Portfolio details">
-      <span>AJ / 2026</span>
-      <span>Selected work</span>
-      <span>Software engineer · New York</span>
-    </div>
     <header>
       <img class="avatar" src="assets/profile.jpg" alt="Andrew Jorge" />
       <div class="header-content">
