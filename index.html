@@ -6,24 +6,24 @@
   <title>Andrew Jorge · Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..500,0..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:        #0a0b0e;
-      --fg:        #f3f1ec;          /* warm off-white, less cold than pure gray */
-      --muted:     #9da1aa;          /* sharper, slightly more chromatic */
-      --subtle:    #6a6d75;
-      --rule:      #1d1f25;
-      --rule-strong:#2a2d35;
+      --bg:         #171411;
+      --surface:    rgba(255, 250, 241, 0.035);
+      --fg:         #f3eee5;
+      --muted:      #b5ab9d;
+      --subtle:     #837a6f;
+      --rule:       rgba(243, 238, 229, 0.14);
+      --rule-strong:rgba(243, 238, 229, 0.28);
+      --accent:     #d3ad84;
+      --accent-dim: rgba(211, 173, 132, 0.16);
+      --warm:       #ce8b76;
+      --warm-dim:   rgba(206, 139, 118, 0.16);
 
-      --accent:    #a3a87a;          /* muted olive — links, interactive */
-      --accent-dim:#2b2d1c;          /* selection background */
-
-      --warm:      #d9abba;          /* dusty cotton-candy pink — warm accent */
-      --warm-dim:  rgba(217, 171, 186, 0.12);
-
-      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-      --font-display: "Fraunces", "Iowan Old Style", "Apple Garamond", Georgia, serif;
+      --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --font-mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
+      --font-display: "Newsreader", "Iowan Old Style", "Apple Garamond", Georgia, serif;
     }
 
     * { box-sizing: border-box; }
@@ -37,54 +37,89 @@
       color: var(--fg);
       background: var(--bg);
       background-image:
-        radial-gradient(ellipse 90% 60% at 18% 8%, rgba(217, 171, 186, 0.05) 0%, transparent 60%),
-        linear-gradient(218deg, #11100e 0%, #0a0b0a 38%, #060606 100%);
+        radial-gradient(ellipse 82% 58% at 4% -12%, rgba(104, 78, 53, 0.24), transparent 70%),
+        radial-gradient(ellipse 70% 62% at 102% 98%, rgba(75, 61, 47, 0.28), transparent 74%),
+        linear-gradient(125deg, #1c1814 0%, #141210 53%, #1a1612 100%);
       background-attachment: fixed;
       line-height: 1.6;
       font-size: 16px;
       min-height: 100vh;
+      isolation: isolate;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.42;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M-90 147 C171 92 271 222 462 166 S704 45 919 126 S1247 218 1698 66' stroke='%23c6aa89' stroke-width='1.1' opacity='.34'/%3E%3Cpath d='M-72 176 C153 120 289 264 490 194 S697 78 912 152 S1278 250 1692 99' stroke='%237d6b59' stroke-width='.55' opacity='.52'/%3E%3Cpath d='M932 -30 C826 152 1034 208 951 351 S772 485 892 606 S1067 769 959 1040' stroke='%23b99877' stroke-width='1.3' opacity='.27'/%3E%3Cpath d='M895 15 C805 157 1008 223 926 341 S749 483 858 593 S1048 774 925 1030' stroke='%236b5b4d' stroke-width='.6' opacity='.58'/%3E%3Cpath d='M16 830 C239 671 380 811 556 722 S858 584 1061 698 S1328 842 1620 733' stroke='%23b99877' stroke-width='.8' opacity='.26'/%3E%3Cpath d='M1171 -28 C1298 136 1196 226 1322 357 S1450 530 1342 684 S1376 888 1498 1021' stroke='%23796756' stroke-width='.65' opacity='.45'/%3E%3Cpath d='M449 173 l39 29 M1009 145 l-42 38 M878 596 l-43 27 M1324 356 l35 25 M557 724 l-41 34' stroke='%23d0b28f' stroke-width='.55' opacity='.32'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      background-repeat: no-repeat;
+      mix-blend-mode: screen;
+    }
 
     main {
-      max-width: 880px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 112px 32px 160px;
+      padding: 88px 40px 144px;
+      position: relative;
+      z-index: 1;
     }
     .col-content { min-width: 0; }
+
+    /* A compact running head makes the page feel like a record of work, not a landing page. */
+    .folio-header {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 11px 0 10px;
+      margin-bottom: 44px;
+      border-top: 1px solid var(--fg);
+      border-bottom: 1px solid var(--rule-strong);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .folio-header span:nth-child(2) { color: var(--fg); }
+    .folio-header span:last-child { text-align: right; }
 
     /* ---------- header ---------- */
     header {
       margin-bottom: 72px;
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
     }
     .avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
+      width: 72px;
+      height: 72px;
+      border-radius: 0;
       object-fit: cover;
       flex-shrink: 0;
       border: 1px solid var(--rule-strong);
-      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.02);
-      filter: saturate(0.95);
+      filter: saturate(0.78) sepia(0.08);
     }
     .header-content { min-width: 0; }
     header h1 {
       font-family: var(--font-display);
-      font-size: 60px;
-      font-weight: 380;
-      font-variation-settings: "opsz" 144, "SOFT" 60;
-      letter-spacing: -0.035em;
-      margin: 0 0 14px;
-      line-height: 0.98;
+      font-size: clamp(48px, 7vw, 70px);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      margin: 0 0 10px;
+      line-height: 0.9;
     }
     header .meta {
       color: var(--muted);
-      font-size: 14px;
-      letter-spacing: 0.005em;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: -0.03em;
     }
     header .meta a {
       color: var(--muted);
@@ -110,137 +145,117 @@
       margin: 0 10px;
     }
     header .status {
-      margin-top: 16px;
-      font-size: 13px;
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--font-mono);
+      font-size: 10px;
       color: var(--muted);
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      letter-spacing: 0.005em;
+      gap: 12px;
+      letter-spacing: -0.02em;
     }
-    header .status::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--warm);
-      box-shadow: 0 0 0 4px var(--warm-dim);
+    .status-label {
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     /* ---------- intro ---------- */
     .intro {
-      margin-bottom: 88px;
+      margin-bottom: 104px;
       font-family: var(--font-display);
-      font-variation-settings: "opsz" 18, "SOFT" 60;
-      font-size: 18px;
+      font-size: 21px;
       font-weight: 400;
-      line-height: 1.55;
-      letter-spacing: -0.003em;
+      line-height: 1.43;
+      letter-spacing: -0.012em;
       color: var(--fg);
-      max-width: 54ch;
-      padding-right: 32px;
+      max-width: 47ch;
+      padding: 0 0 0 22px;
       position: relative;
     }
     .intro::after {
       content: "";
       position: absolute;
-      right: 0;
-      top: 6px;
-      bottom: 6px;
-      width: 1px;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(255, 255, 255, 0.12) 14%,
-        rgba(255, 255, 255, 0.12) 86%,
-        transparent 100%
-      );
+      left: 0;
+      top: 0.25em;
+      bottom: 0.2em;
+      width: 2px;
+      background: var(--accent);
       pointer-events: none;
     }
     .intro p { margin: 0; }
 
     /* ---------- sections ---------- */
     section {
-      margin-top: 96px;
+      margin-top: 112px;
       position: relative;
     }
-    /* Short vertical tick above each section header — "drops in" from above */
     section::before {
-      content: "";
-      position: absolute;
-      top: -28px;
-      left: 0;
-      width: 1px;
-      height: 20px;
-      background: var(--warm);
-      opacity: 0.7;
+      display: none;
     }
     section > h2 {
-      font-size: 12px;
-      font-weight: 500;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--fg);
-      margin: 0 0 36px;
-      padding-bottom: 16px;
+      color: var(--muted);
+      margin: 0 0 30px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--rule-strong);
       display: flex;
       align-items: baseline;
-      gap: 14px;
+      gap: 10px;
     }
     section > h2 .h2-num {
-      color: var(--warm);
+      color: var(--accent);
       font-variant-numeric: tabular-nums;
       font-weight: 500;
       letter-spacing: 0.04em;
     }
     section > h2 .h2-rule {
-      flex: 0 0 24px;
+      flex: 0 0 36px;
       height: 1px;
-      background: var(--rule-strong);
-      margin: 0 4px;
+      background: var(--accent);
+      margin: 0 2px;
     }
 
     /* ---------- items (2-col grid: left-margin metadata) ---------- */
     .item {
-      margin-bottom: 64px;
+      margin-bottom: 44px;
+      padding-bottom: 44px;
       display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 32px;
+      grid-template-columns: 136px minmax(0, 1fr);
+      gap: 42px;
       align-items: start;
       position: relative;
     }
-    /* Vertical hairline running between meta col and content col, full item height */
-    .item::before {
+    .item:not(:last-child)::after {
       content: "";
       position: absolute;
-      left: 136px;
-      top: 8px;
-      bottom: 8px;
-      width: 1px;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(255, 255, 255, 0.10) 12%,
-        rgba(255, 255, 255, 0.10) 88%,
-        transparent 100%
-      );
-      pointer-events: none;
+      left: 178px;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: var(--rule);
     }
-    .item:last-child { margin-bottom: 0; }
+    .item:last-child { margin-bottom: 0; padding-bottom: 0; }
     .item-meta-col {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
       text-transform: uppercase;
       color: var(--muted);
       font-variant-numeric: tabular-nums;
-      padding-top: 12px;
+      padding-top: 10px;
       line-height: 1.7;
+      border-top: 1px solid var(--accent);
     }
     .item-meta-col .meta-label {
-      color: var(--warm);
+      color: var(--accent);
       display: block;
       margin-top: 2px;
     }
@@ -249,25 +264,24 @@
       justify-content: space-between;
       align-items: baseline;
       gap: 16px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .item-head + .item-body { margin-top: 14px; }
     .item-title {
       font-family: var(--font-display);
-      font-weight: 450;
-      font-variation-settings: "opsz" 60, "SOFT" 40;
-      font-size: 26px;
-      letter-spacing: -0.022em;
-      line-height: 1.2;
+      font-weight: 500;
+      font-size: 32px;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
       display: flex;
       align-items: baseline;
       gap: 16px;
     }
     .item-num {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
       color: var(--muted);
       text-transform: uppercase;
       font-variant-numeric: tabular-nums;
@@ -292,29 +306,31 @@
     .item-title a:hover { color: var(--accent); }
     .item-title a:hover::after { opacity: 1; transform: translateX(0); }
     .item:hover .item-num {
-      color: var(--warm);
+      color: var(--accent);
       transition: color 240ms ease;
     }
     .item-role {
       color: var(--muted);
-      font-size: 14px;
-      margin-top: 2px;
+      font-size: 13px;
+      margin-top: 7px;
     }
     .item-meta {
       color: var(--muted);
-      font-size: 13px;
+      font-family: var(--font-mono);
+      font-size: 10px;
       white-space: nowrap;
       font-variant-numeric: tabular-nums;
       letter-spacing: 0.01em;
     }
     .item-stack {
       color: var(--subtle);
-      font-size: 13px;
-      margin: 0 0 14px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      margin: 0 0 18px;
       letter-spacing: 0.01em;
     }
-    .item-body { margin: 0; max-width: 64ch; }
-    .item-body p { margin: 10px 0; }
+    .item-body { margin: 0; max-width: 62ch; }
+    .item-body p { margin: 12px 0; }
     .item-body p:first-child { margin-top: 0; }
     .item-body p:last-child  { margin-bottom: 0; }
     .item-figures {
@@ -331,7 +347,7 @@
       border: 1px solid var(--rule-strong);
       border-radius: 4px;
       overflow: hidden;
-      background: var(--bg);
+      background: var(--surface);
       transition: border-color 160ms ease, transform 160ms ease;
     }
     .item-figures a:hover {
@@ -364,11 +380,12 @@
     }
 
     .item-links {
-      margin-top: 20px;
-      font-size: 13px;
+      margin-top: 22px;
+      font-family: var(--font-mono);
+      font-size: 10px;
       display: flex;
       gap: 24px;
-      letter-spacing: 0.005em;
+      letter-spacing: -0.02em;
     }
     .item-links a {
       color: var(--accent);
@@ -395,7 +412,7 @@
     .course-list dt {
       font-family: var(--font-display);
       font-weight: 460;
-      font-variation-settings: "opsz" 32, "SOFT" 40;
+      font-variation-settings: "opsz" 32;
       font-size: 16px;
       letter-spacing: -0.012em;
       color: var(--fg);
@@ -435,31 +452,36 @@
     /* ---------- skills ---------- */
     .skills-grid {
       display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 20px 28px;
+      grid-template-columns: 136px 1fr;
+      gap: 0 42px;
       font-size: 14px;
     }
     .skills-grid dt {
       color: var(--muted);
-      font-size: 11px;
-      font-weight: 500;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      padding-top: 5px;
+      padding: 12px 0;
+      border-top: 1px solid var(--accent);
     }
     .skills-grid dd {
       margin: 0;
       color: var(--fg);
       line-height: 1.65;
       max-width: 60ch;
+      padding: 11px 0;
+      border-top: 1px solid var(--rule);
     }
 
     /* ---------- footer ---------- */
     footer {
-      margin-top: 128px;
-      padding-top: 24px;
-      border-top: 1px solid var(--rule);
-      font-size: 12px;
+      margin-top: 144px;
+      padding-top: 12px;
+      border-top: 1px solid var(--fg);
+      font-family: var(--font-mono);
+      font-size: 10px;
       color: var(--subtle);
       display: flex;
       justify-content: space-between;
@@ -474,20 +496,16 @@
     }
     footer a:hover { opacity: 1; }
 
-    /* ---------- geometric accents (Swiss-design corner ticks + hairlines) ---------- */
+    /* ---------- quiet image treatment ---------- */
     .crosshair {
       position: relative;
     }
     .crosshair::before,
     .crosshair::after {
-      content: "+";
+      content: "";
       position: absolute;
       font-family: var(--font-sans);
-      font-size: 12px;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.32);
-      line-height: 1;
-      pointer-events: none;
+      display: none;
     }
     .crosshair::before { top: -14px; left: -14px; }
     .crosshair::after  { bottom: -14px; right: -14px; }
@@ -495,52 +513,12 @@
     .hairline {
       display: block;
       height: 1px;
-      background: rgba(255, 255, 255, 0.16);
+      background: var(--rule);
       margin: 0;
       border: 0;
     }
     .hairline-short {
       width: 64px;
-    }
-
-    /* ---------- interlude (mid-page photo, integrated not framed) ---------- */
-    .interlude {
-      margin: 112px 0;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 8%;
-    }
-    .interlude figure {
-      margin: 0;
-      position: relative;
-      width: 320px;
-      max-width: 60%;
-    }
-    .interlude img {
-      display: block;
-      width: 100%;
-      height: auto;
-      filter: saturate(0.55) brightness(0.92) contrast(1.05);
-      transition: filter 600ms ease;
-      mask-image: radial-gradient(
-        ellipse 110% 100% at 50% 40%,
-        rgba(0, 0, 0, 1) 35%,
-        rgba(0, 0, 0, 0.85) 60%,
-        rgba(0, 0, 0, 0) 100%
-      );
-      -webkit-mask-image: radial-gradient(
-        ellipse 110% 100% at 50% 40%,
-        rgba(0, 0, 0, 1) 35%,
-        rgba(0, 0, 0, 0.85) 60%,
-        rgba(0, 0, 0, 0) 100%
-      );
-    }
-    .interlude figure:hover img {
-      filter: saturate(0.85) brightness(0.98) contrast(1.0);
-    }
-    @media (max-width: 760px) {
-      .interlude { padding-right: 0; justify-content: center; }
-      .interlude figure { width: 260px; }
     }
 
     /* ---------- elsewhere (photo strip) ---------- */
@@ -595,20 +573,7 @@
       .elsewhere-grid figure:nth-child(2) { margin-top: 0; }
     }
 
-    /* ---------- reveal animation ---------- */
-    .reveal-target {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
-                  transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
-    }
-    .reveal-target.is-visible {
-      opacity: 1;
-      transform: none;
-    }
     @media (prefers-reduced-motion: reduce) {
-      .reveal-target { opacity: 1; transform: none; transition: none; }
       html { scroll-behavior: auto; }
       .item-title a::after,
       .item-links a::after,
@@ -617,8 +582,11 @@
 
     /* ---------- responsive ---------- */
     @media (max-width: 760px) {
+      .folio-header { grid-template-columns: 1fr auto; }
+      .folio-header span:last-child { display: none; }
       .item { grid-template-columns: 1fr; gap: 12px; }
-      .item-meta-col { padding-top: 0; }
+      .item:not(:last-child)::after { left: 0; }
+      .item-meta-col { padding-top: 8px; }
     }
     @media (max-width: 600px) {
       main { padding: 56px 22px 80px; }
@@ -639,12 +607,17 @@
 </head>
 <body>
   <main>
+    <div class="folio-header" aria-label="Portfolio details">
+      <span>AJ / 2026</span>
+      <span>Selected work</span>
+      <span>Software engineer · New York</span>
+    </div>
     <header>
       <img class="avatar" src="assets/profile.jpg" alt="Andrew Jorge" />
       <div class="header-content">
         <h1>Andrew Jorge</h1>
         <div class="meta">
-          San Francisco
+          New York City
           <span class="sep">·</span>
           <a href="mailto:andrewjorge.jobs@gmail.com">andrewjorge.jobs@gmail.com</a>
           <span class="sep">·</span>
@@ -652,13 +625,13 @@
           <span class="sep">·</span>
           <a href="https://www.linkedin.com/in/andrew-jorge-309a99219" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-        <div class="status">Open to new-grad and early-career software engineering roles</div>
+        <div class="status"><span class="status-label">Availability</span>Open to junior software engineering roles</div>
       </div>
     </header>
 
     <div class="intro">
       <p>
-        Software engineer in San Francisco. Bowdoin '25, CS and Math. Most recently at Stone Point
+        Software engineer in New York City. Bowdoin '25, CS and Math. Most recently at Stone Point
         Capital, where I built LLM tooling that investment and capital markets teams
         use on live deals. I'm most interested in problems where the data and the
         interface matter as much as the model.
@@ -670,64 +643,16 @@
 
       <div class="item">
         <div class="item-meta-col">
-          Jul 2025<br/>Present
-        </div>
-        <div class="col-content">
-          <span class="item-title">
-            <a href="https://site--codearchitect--74wvcb9qzxr6.code.run/" target="_blank" rel="noopener">CodeArchitect</a>
-          </span>
-          <div class="item-role">Founder &amp; Software Engineer</div>
-          <div class="item-stack">
-            Node · Express · React · Vite · tree-sitter · Anthropic API
-          </div>
-          <div class="item-body">
-            <p>
-              An interactive tool for reading a codebase by its structure. Every file is
-              parsed via tree-sitter into nested, selectable pieces — function, block,
-              expression — drawn over the source and chunked live, aware of structure
-              boundaries down to a single character. Three sliders shape the slicing:
-              granularity (how deep to split), depth spread (how far apart the chosen
-              depths may sit), and context detail (how finely large files are summarized
-              for the AI, under a word-count cap).
-            </p>
-            <p>
-              Each piece carries a stable identity derived from the tree rather than the
-              current zoom, so understanding accumulates across re-chunking instead of being
-              discarded. Meanings are computed recursively and cached against those
-              identities — a snippet's standalone meaning is computed once and reused
-              wherever it recurs, and different slicings of a file share their common
-              ancestors — then folded with surrounding scope up through the folder tree, so
-              an answer about a single line can draw on the whole project.
-            </p>
-            <p>
-              Question-answering is retrieval the user steers: the selected piece is the
-              unit, so there is no vector database — the access pattern is exact-key lookup
-              along one path, not similarity search. The meaning cache is content-addressed
-              and therefore self-invalidating (edited code yields new keys; stale entries are
-              simply never read again), backed by a plain on-disk file with an in-memory
-              layer rather than any standing service. Two distinct Anthropic models are
-              routed by the weight of each read/write request.
-            </p>
-          </div>
-          <div class="item-links">
-            <a href="https://site--codearchitect--74wvcb9qzxr6.code.run/" target="_blank" rel="noopener">Live demo</a>
-            <a href="https://github.com/ajorge2/code-viewer-demo" target="_blank" rel="noopener">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-meta-col">
           Mar 2026<br/>May 2026
         </div>
         <div class="col-content">
           <div class="item-title">Stone Point Capital</div>
-          <div class="item-role">Technology Intern</div>
+          <div class="item-role">Applied AI Engineer</div>
           <div class="item-body" style="margin-top: 16px;">
             <p>
               Built an interactive assumption tester in R for the private equity valuation
               team: analysts slide pricing and entry/exit variables and watch valuation,
-              leveraged-buyout returns, and assumption drift recompute in ~1ms — spanning
+              leveraged-buyout returns, and assumption drift recompute in ~1ms, spanning
               49 pricing-assumption combinations, 36 entry-and-exit combinations, and 5
               model versions, with a browser-side Excel upload and field-tagging that
               streamlines translation into CSV. Demoed it to a VP, who deemed it
@@ -735,17 +660,17 @@
             </p>
             <p>
               Automated a RAG Q&amp;A tool with exact citations for the Capital
-              Markets team's diligence — citations served from cache before
+              Markets team's diligence, citations served from cache before
               touching raw sources, so every answer is traceable. Shipped an earnings
               report summarizer for the investment team, conditioned on 20+ prior
-              analyst-written summaries so output matches house style — the difference
+              analyst-written summaries so output matches house style, the difference
               between a tool analysts adopt and one they ignore.
             </p>
             <p>
               Built a working RAG prototype over internal IT documentation: hybrid
               BM25 + FAISS dense retrieval fused by reciprocal rank fusion, a
               cross-encoder second pass that re-reads the top 40 passages and keeps the 5
-              most relevant, and a confidence gate that declines below 0.60 — scored
+              most relevant, and a confidence gate that declines below 0.60, scored
               against the chunks the model actually cited. Designed a RAGAS evaluation
               framework over a labeled Q&amp;A set (10% deliberately declinable) to
               catch over-confident answers.
@@ -761,16 +686,16 @@
         </div>
         <div class="col-content">
           <div class="item-title">Bowdoin College</div>
-          <div class="item-role">B.A., Computer Science &amp; Mathematics — double major · Brunswick, ME</div>
+          <div class="item-role">B.A., Computer Science &amp; Mathematics, double major · Brunswick, ME</div>
           <div class="item-body" style="margin-top: 16px;">
             <p>
-              A few courses that shaped how I build — less the syllabus, more what stuck:
+              A few courses that shaped how I build, less the syllabus, more what stuck:
             </p>
           </div>
           <dl class="course-list">
             <dt>Mathematical Principles of Machine Learning</dt>
             <dd>
-              The linear algebra, optimization, and probability beneath modern ML —
+              The linear algebra, optimization, and probability beneath modern ML,
               empirical risk minimization, backpropagation, and the universal-approximation
               results that explain why architectures from transformers to graph neural
               networks actually work.
@@ -785,7 +710,7 @@
             <dt>Artificial Intelligence</dt>
             <dd>
               Intelligent agents, reinforcement learning,
-              and the arc from classical methods to deep learning — implementing decision
+              and the arc from classical methods to deep learning, implementing decision
               trees, classifiers, and neural networks up from problem spaces.
             </dd>
           </dl>
@@ -795,13 +720,6 @@
         </div>
       </div>
     </section>
-
-    <div class="interlude" aria-hidden="true">
-      <figure>
-        <img src="assets/download.jpg" alt=""
-             onerror="this.closest('.interlude').remove();" />
-      </figure>
-    </div>
 
     <section>
       <h2><span class="h2-num">02</span><span class="h2-rule"></span>Selected Work</h2>
@@ -814,6 +732,56 @@
         <div class="col-content">
           <span class="item-title">
             <span class="item-num">01</span>
+            <a href="https://site--codearchitect--74wvcb9qzxr6.code.run/" target="_blank" rel="noopener">CodeArchitect</a>
+          </span>
+          <div class="item-stack">
+            Node · Express · React · Vite · tree-sitter · Anthropic API
+          </div>
+          <div class="item-body">
+            <p>
+              An interactive tool for reading a codebase by its structure. Every file is
+              parsed via tree-sitter into nested, selectable pieces, function, block, and
+              expression, drawn over the source and chunked live, aware of structure
+              boundaries down to a single character. Three sliders shape the slicing:
+              granularity, how deep to split; depth spread, how far apart the chosen depths
+              may sit; and context detail, how finely large files are summarized for the AI
+              under a word-count cap.
+            </p>
+            <p>
+              Each piece carries a stable identity derived from the tree rather than the
+              current zoom, so understanding accumulates across re-chunking instead of being
+              thrown away. Meanings are computed recursively and cached against those
+              identities, so a snippet's standalone meaning is computed once and reused
+              wherever it recurs, and different slicings of a file share their common
+              ancestors, then folded with surrounding scope up through the folder tree so an
+              answer about a single line can draw on the whole project.
+            </p>
+            <p>
+              Question-answering is retrieval the user steers. The selected piece is the
+              unit, so there is no vector database; the access pattern is an exact-key lookup
+              along one path rather than a similarity search. The meaning cache is
+              content-addressed and self-invalidating, since edited code yields new keys and
+              stale entries are simply never read again, backed by a plain on-disk file with
+              an in-memory layer rather than a standing service. Two Anthropic models are
+              routed by the weight of each read and write request, cutting cost without
+              losing answer quality.
+            </p>
+          </div>
+          <div class="item-links">
+            <a href="https://site--codearchitect--74wvcb9qzxr6.code.run/" target="_blank" rel="noopener">Live demo</a>
+            <a href="https://github.com/ajorge2/code-viewer-demo" target="_blank" rel="noopener">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-meta-col">
+          2026
+          <span class="meta-label">Live</span>
+        </div>
+        <div class="col-content">
+          <span class="item-title">
+            <span class="item-num">02</span>
             <a href="https://markets-project.vercel.app/" target="_blank" rel="noopener">Credit Stress Predictor</a>
           </span>
           <div class="item-stack">
@@ -826,7 +794,7 @@
               from FRED and yfinance, carrying full revision history back to 1990 and
               updating live. Dual-timestamp Postgres eliminates look-ahead bias from FRED
               revisions, so the stress picture for any past date is rebuilt using only the
-              data published by then — never peeking at the future.
+              data published by then, never peeking at the future.
             </p>
             <p>
               182 per-sector indicator weights, each derived empirically via OLS
@@ -837,8 +805,8 @@
               Designed an entity-resolution pipeline across FDIC and SEC EDGAR to
               assemble a dataset no single source publishes: 71 bank acquisitions
               enriched with real deal prices, resolved out of ~11,300 merger records.
-              Then validated a deal-pricing model out-of-sample — trained on pre-2020
-              deals, tested on later ones — and reported the honest null: macro
+              Then validated a deal-pricing model out-of-sample, trained on pre-2020
+              deals, tested on later ones, and reported the honest null: macro
               conditions alone do not predict deal pricing (R² ≈ 0.09).
             </p>
             <p>
@@ -882,7 +850,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">02</span>
+            <span class="item-num">03</span>
             <a href="https://site--orcview--764vq9x779wv.code.run/" target="_blank" rel="noopener">OrcView</a>
           </span>
           <div class="item-stack">
@@ -892,8 +860,8 @@
             <p>
               An observability layer and SDK for LLM agents that turns any Python
               function into a tool, building its schema from type hints and the docstring.
-              Real-time ReAct visualization and SSE streaming log every event — 10 kinds
-              in all, tool calls, model calls, errors — with cost tracked to $0.000001.
+              Real-time ReAct visualization and SSE streaming log every event, 10 kinds
+              in all, tool calls, model calls, errors, with cost tracked to $0.000001.
               Any sub-agent opens in under 50ms over a single live connection, however
               deeply nested, cutting failure root-cause to under two minutes.
             </p>
@@ -904,7 +872,7 @@
               edits never corrupt a run. SQLite persists versioned run history, so agent
               behavior can be compared across model, prompt, and tool changes. Hardened on
               a data-analyst agent (7 tools, 3 chart types) that decides on its own when a
-              chart conveys more than prose — 5,700 LOC, zero build steps.
+              chart conveys more than prose.
             </p>
           </div>
           <div class="item-links">
@@ -917,11 +885,43 @@
       <div class="item">
         <div class="item-meta-col">
           2026
+          <span class="meta-label">Health AI</span>
+        </div>
+        <div class="col-content">
+          <span class="item-title">
+            <span class="item-num">04</span>
+            WellnessCoach
+          </span>
+          <div class="item-stack">
+            Python · LangGraph · Anthropic API
+          </div>
+          <div class="item-body">
+            <p>
+              A wellness model that works from the body signals underneath a goal rather than
+              the goal alone. Trends in signals like sleep are mapped into seven
+              research-grounded constructs of body state, each computed from its own equation
+              over those inputs, and tied to how much real progress a person is making.
+            </p>
+            <p>
+              An AI interview captures the goal, what progress actually means to the person,
+              and the body states that bear on it. From there a goal-specific chat translates
+              any activity they are weighing into a quantified cost against that goal, so a
+              late night or a skipped workout reads as a concrete tax rather than a vague
+              maybe-don't. The chat recalibrates how heavily each signal counts as it goes,
+              learning from the somatic symptoms the person reports back.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-meta-col">
+          2026
           <span class="meta-label">Full-stack</span>
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">03</span>
+            <span class="item-num">05</span>
             <a href="https://learning-accelerator.vercel.app/" target="_blank" rel="noopener">Learning Accelerator</a>
           </span>
           <div class="item-stack">
@@ -956,8 +956,8 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">04</span>
-            <a href="https://github.com/ajorge2/ETL-agent-pipeline" target="_blank" rel="noopener">ETL Agent Pipeline</a>
+            <span class="item-num">06</span>
+            <a href="https://github.com/ajorge2/ETL-agent-pipeline" target="_blank" rel="noopener">AgenticETL</a>
           </span>
           <div class="item-stack">
             Kafka · Great Expectations · LangGraph · Claude · FastAPI · PostgreSQL
@@ -1024,26 +1024,5 @@
     </footer>
   </main>
 
-  <script>
-    // Scroll-reveal: fade items + section headers in as they enter the viewport
-    (function () {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const targets = document.querySelectorAll('section > h2, .item, .intro, .interlude, .elsewhere');
-      targets.forEach(t => t.classList.add('reveal-target'));
-      if (reduce || !('IntersectionObserver' in window)) {
-        targets.forEach(t => t.classList.add('is-visible'));
-        return;
-      }
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
-      targets.forEach(t => io.observe(t));
-    })();
-  </script>
 </body>
 </html>
