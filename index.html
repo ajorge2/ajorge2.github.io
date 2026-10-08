@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andrew Jorge · Software Engineer</title>
+  <title>Andrew Jorge · Applied AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -598,16 +598,16 @@
           <span class="sep">·</span>
           <a href="https://www.linkedin.com/in/andrew-jorge-309a99219" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-        <div class="status"><span class="status-label">Availability</span>Open to junior software engineering roles</div>
+        <div class="status"><span class="status-label">Availability</span>Open to Applied AI engineering and AI research roles</div>
       </div>
     </header>
 
     <div class="intro">
       <p>
-        AI engineer/data scientist in New York City. Bowdoin '25, CS and Math. Most recently at Stone Point
+        Applied AI engineer in New York City. Bowdoin '25, CS and Math. Most recently at Stone Point
         Capital, where I built LLM tooling that investment and capital markets teams
-        use on live deals. I'm most interested in problems where the data and the
-        interface matter as much as the model.
+        use on live deals. I'm most interested in designing and evaluating AI workflows
+        where explicit structure, evidence, and decision quality matter as much as the model.
       </p>
     </div>
 
@@ -635,7 +635,7 @@
               Automated a RAG Q&amp;A tool with exact citations for the Capital
               Markets team's diligence, citations served from cache before
               touching raw sources, so every answer is traceable. Shipped an earnings
-              report summarizer for the investment team, conditioned on 20+ prior
+              report summarizer for the investment team, conditioned on 50+ prior
               analyst-written summaries so output matches house style, the difference
               between a tool analysts adopt and one they ignore.
             </p>
@@ -700,11 +700,51 @@
       <div class="item">
         <div class="item-meta-col">
           2026
-          <span class="meta-label">Live</span>
+          <span class="meta-label">Applied AI research</span>
         </div>
         <div class="col-content">
           <span class="item-title">
             <span class="item-num">01</span>
+            <a href="https://ajorge2.github.io/SQLHarness/" target="_blank" rel="noopener">SQLHarness</a>
+          </span>
+          <div class="item-stack">
+            Python · MCP v2 · BIRD-SQL · SQLGlot · BGE · vector retrieval
+          </div>
+          <div class="item-body">
+            <p>
+              An NL-to-SQL research system that makes the path from a business question to
+              executable SQL inspectable. It parses an AMR-inspired intent graph, retrieves
+              SQL fragments, and uses a lightweight model to assemble a candidate query.
+            </p>
+            <p>
+              Execution sits behind an MCP authority boundary with typed database tools,
+              SQLGlot AST and schema validation, read-only policy enforcement, timeouts,
+              sandboxed execution, bounded retry, and abstention. Cached traces expose both
+              successful queries and blocked mutations without requiring an API key.
+            </p>
+            <p>
+              A frozen five-query development comparison found the direct model correct on
+              4/5 and both structured variants correct on 3/5. The negative result is kept
+              public alongside the error decomposition: the current value is inspectability
+              and safety, not a claimed accuracy win.
+            </p>
+          </div>
+          <div class="item-links">
+            <a href="https://ajorge2.github.io/SQLHarness/" target="_blank" rel="noopener">Live analysis</a>
+            <a href="https://ajorge2.github.io/SQLHarness/share.html" target="_blank" rel="noopener">Research brief</a>
+            <a href="https://github.com/ajorge2/SQLHarness" target="_blank" rel="noopener">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-meta-col">
+          2026
+          <span class="meta-label">Live</span>
+        </div>
+        <div class="col-content">
+          <span class="item-title">
+            <span class="item-num">02</span>
             <a href="https://site--codearchitect--74wvcb9qzxr6.code.run/" target="_blank" rel="noopener">CodeArchitect</a>
           </span>
           <div class="item-stack">
@@ -736,12 +776,19 @@
               content-addressed and self-invalidating, since edited code yields new keys and
               stale entries are simply never read again, backed by a plain on-disk file with
               an in-memory layer rather than a standing service. Two Anthropic models are
-              routed by the weight of each read and write request, cutting cost without
-              losing answer quality.
+              routed by the weight of each read and write request.
+            </p>
+            <p>
+              The public analysis freezes concept discovery on 685 diffs from 668 repository
+              families, tests 151 components from 132 unseen families, and preserves the
+              decision not to lower the acceptance threshold after human-reviewed precision
+              missed its pre-registered guardrail.
             </p>
           </div>
           <div class="item-links">
             <a href="https://site--codearchitect--74wvcb9qzxr6.code.run/" target="_blank" rel="noopener">Live demo</a>
+            <a href="https://ajorge2.github.io/code-viewer-demo/" target="_blank" rel="noopener">Analysis</a>
+            <a href="https://colab.research.google.com/drive/1fZfmiOZ7l35AeVMJTw1TlXOyQFkWI0gQ?usp=sharing" target="_blank" rel="noopener">Evidence notebook</a>
             <a href="https://github.com/ajorge2/code-viewer-demo" target="_blank" rel="noopener">Source</a>
           </div>
         </div>
@@ -754,7 +801,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">02</span>
+            <span class="item-num">03</span>
             <a href="https://markets-project.vercel.app/" target="_blank" rel="noopener">Credit Stress Predictor</a>
           </span>
           <div class="item-stack">
@@ -823,7 +870,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">03</span>
+            <span class="item-num">04</span>
             <a href="https://site--orcview--764vq9x779wv.code.run/" target="_blank" rel="noopener">OrcView</a>
           </span>
           <div class="item-stack">
@@ -834,9 +881,8 @@
               An observability layer and SDK for LLM agents that turns any Python
               function into a tool, building its schema from type hints and the docstring.
               Real-time ReAct visualization and SSE streaming log every event, 10 kinds
-              in all, tool calls, model calls, errors, with cost tracked to $0.000001.
-              Any sub-agent opens in under 50ms over a single live connection, however
-              deeply nested, cutting failure root-cause to under two minutes.
+              in all, including tool calls, model calls, errors, and stop conditions,
+              with cost tracked to $0.000001.
             </p>
             <p>
               O(1) cycle detection threads an immutable frozenset call chain through every
@@ -845,11 +891,14 @@
               edits never corrupt a run. SQLite persists versioned run history, so agent
               behavior can be compared across model, prompt, and tool changes. Hardened on
               a data-analyst agent (7 tools, 3 chart types) that decides on its own when a
-              chart conveys more than prose.
+              chart conveys more than prose. The saved evaluation exposes where the agent
+              fails when its tool surface cannot express the requested analysis, including
+              a documented grader false positive.
             </p>
           </div>
           <div class="item-links">
             <a href="https://site--orcview--764vq9x779wv.code.run/" target="_blank" rel="noopener">Live demo</a>
+            <a href="https://ajorge2.github.io/agent-orchestrator/" target="_blank" rel="noopener">Evaluation</a>
             <a href="https://github.com/ajorge2/agent-orchestrator" target="_blank" rel="noopener">Source</a>
           </div>
         </div>
@@ -862,7 +911,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">04</span>
+            <span class="item-num">05</span>
             WellnessCoach
           </span>
           <div class="item-stack">
@@ -894,7 +943,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">05</span>
+            <span class="item-num">06</span>
             <a href="https://learning-accelerator.vercel.app/" target="_blank" rel="noopener">Learning Accelerator</a>
           </span>
           <div class="item-stack">
@@ -929,7 +978,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">06</span>
+            <span class="item-num">07</span>
             <a href="https://github.com/ajorge2/ETL-agent-pipeline" target="_blank" rel="noopener">AgenticETL</a>
           </span>
           <div class="item-stack">
@@ -961,7 +1010,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">07</span>
+            <span class="item-num">08</span>
             <a href="https://site--variantgrid--764vq9x779wv.code.run/" target="_blank" rel="noopener">VariantGrid</a>
           </span>
           <div class="item-stack">
@@ -982,6 +1031,7 @@
           </div>
           <div class="item-links">
             <a href="https://site--variantgrid--764vq9x779wv.code.run/" target="_blank" rel="noopener">Live demo</a>
+            <a href="https://ajorge2.github.io/VariantGrid/" target="_blank" rel="noopener">Verification</a>
             <a href="https://github.com/ajorge2/VariantGrid" target="_blank" rel="noopener">Source</a>
           </div>
         </div>
@@ -994,7 +1044,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">08</span>
+            <span class="item-num">09</span>
             <a href="https://site--demandmap--74wvcb9qzxr6.code.run/clustering_explorer.html" target="_blank" rel="noopener">DemandMap</a>
           </span>
           <div class="item-stack">
@@ -1015,7 +1065,39 @@
           </div>
           <div class="item-links">
             <a href="https://site--demandmap--74wvcb9qzxr6.code.run/clustering_explorer.html" target="_blank" rel="noopener">Live demo</a>
+            <a href="https://ajorge2.github.io/DemandMap/" target="_blank" rel="noopener">Evidence</a>
             <a href="https://github.com/ajorge2/DemandMap" target="_blank" rel="noopener">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-meta-col">
+          2025
+          <span class="meta-label">Statistical analysis</span>
+        </div>
+        <div class="col-content">
+          <span class="item-title">
+            <span class="item-num">10</span>
+            <a href="https://ajorge2.github.io/Brazil-Crash-Severity/" target="_blank" rel="noopener">Brazil Crash Severity</a>
+          </span>
+          <div class="item-stack">
+            R · logistic regression · model selection · reproducible analysis
+          </div>
+          <div class="item-body">
+            <p>
+              An observational analysis of 463,152 Brazilian crash records. An AIC-selected
+              logistic model estimated that crashes attributed to pedestrians walking in the
+              road had 11.52 times the adjusted odds of fatality versus alcohol-related crashes
+              in the 404,508-row modeled cohort (95% CI 10.23–12.98). Adjustment for time of
+              day, road delineation, and weather reduced the estimate by 4.9% without turning
+              the association into a causal claim.
+            </p>
+          </div>
+          <div class="item-links">
+            <a href="https://ajorge2.github.io/Brazil-Crash-Severity/" target="_blank" rel="noopener">Evidence</a>
+            <a href="https://drive.google.com/file/d/1exY5tN2l0TV_9OV7DZrnbtxiyDNvjkkR/view?usp=sharing" target="_blank" rel="noopener">Analysis</a>
+            <a href="https://github.com/ajorge2/Brazil-Crash-Severity" target="_blank" rel="noopener">Source</a>
           </div>
         </div>
       </div>
@@ -1028,7 +1110,8 @@
         <dd>
           Anthropic &amp; OpenAI APIs, structured outputs, Pydantic, prompt caching,
           LangGraph, LangChain, FAISS, BM25, hybrid retrieval, cross-encoder
-          rerankers, RAGAS, LLM-as-judge evals, PyTorch, pandas, statsmodels
+          rerankers, RAGAS, LLM-as-judge evals, BIRD-SQL, MCP, SQLGlot,
+          PyTorch, pandas, statsmodels
         </dd>
         <dt>Backend</dt>
         <dd>Python, FastAPI, Flask, PostgreSQL, SQLite, Kafka, Redis, Docker</dd>
