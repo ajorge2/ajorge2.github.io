@@ -222,6 +222,17 @@
       background: var(--rule);
     }
     .item:last-child { margin-bottom: 0; padding-bottom: 0; }
+    .item-current { grid-template-columns: minmax(0, 1fr); }
+    .item.item-current:not(:last-child)::after { left: 0; }
+    .work-section { display: flex; flex-direction: column; }
+    .work-section > h2 { order: 0; }
+    .work-section > .item:nth-of-type(1) { order: 1; } /* CodeArchitect */
+    .work-section > .item:nth-of-type(3) { order: 2; } /* OrcView */
+    .work-section > .item:nth-of-type(5) { order: 3; } /* AgenticETL */
+    .work-section > .item:nth-of-type(6) { order: 4; } /* VariantGrid */
+    .work-section > .item:nth-of-type(7) { order: 5; } /* DemandMap */
+    .work-section > .item:nth-of-type(2) { order: 6; } /* Credit Stress Predictor */
+    .work-section > .item:nth-of-type(4) { order: 7; } /* Learning Accelerator */
     .item-meta-col {
       font-family: var(--font-mono);
       font-size: 10px;
@@ -293,6 +304,14 @@
       color: var(--muted);
       font-size: 13px;
       margin-top: 7px;
+    }
+    .experience-lede {
+      margin: 20px 0 14px;
+      color: var(--accent);
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-style: italic;
+      letter-spacing: -0.01em;
     }
     .item-meta {
       color: var(--muted);
@@ -604,23 +623,19 @@
 
     <div class="intro">
       <p>
-        Applied AI engineer in New York City. Bowdoin '25, CS and Math. Most recently at Stone Point
-        Capital, where I built LLM tooling that investment and capital markets teams
-        use on live deals. I'm most interested in designing and evaluating AI workflows
-        where explicit structure, evidence, and decision quality matter as much as the model.
+        AI engineer/data scientist in New York City. Bowdoin '25, CS and Math. Most recently at Stone Point
+        Capital, where I built LLM tooling for non-technical teams.
       </p>
     </div>
 
     <section>
       <h2><span class="h2-num">01</span><span class="h2-rule"></span>Experience &amp; Education</h2>
 
-      <div class="item">
-        <div class="item-meta-col">
-          Mar 2026<br/>May 2026
-        </div>
+      <div class="item item-current">
         <div class="col-content">
           <div class="item-title">Stone Point Capital</div>
           <div class="item-role">Applied AI Engineer</div>
+          <p class="experience-lede">Some of what I did:</p>
           <div class="item-body" style="margin-top: 16px;">
             <p>
               Built an interactive assumption tester in R for the private equity valuation
@@ -694,7 +709,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="work-section">
       <h2><span class="h2-num">02</span><span class="h2-rule"></span>Selected Work</h2>
 
       <div class="item">
@@ -801,7 +816,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">03</span>
+            <span class="item-num">06</span>
             <a href="https://markets-project.vercel.app/" target="_blank" rel="noopener">Credit Stress Predictor</a>
           </span>
           <div class="item-stack">
@@ -870,7 +885,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">04</span>
+            <span class="item-num">02</span>
             <a href="https://site--orcview--764vq9x779wv.code.run/" target="_blank" rel="noopener">OrcView</a>
           </span>
           <div class="item-stack">
@@ -911,7 +926,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">05</span>
+            <span class="item-num">07</span>
             <a href="https://learning-accelerator.vercel.app/" target="_blank" rel="noopener">Learning Accelerator</a>
           </span>
           <div class="item-stack">
@@ -946,7 +961,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">06</span>
+            <span class="item-num">03</span>
             <a href="https://github.com/ajorge2/ETL-agent-pipeline" target="_blank" rel="noopener">AgenticETL</a>
           </span>
           <div class="item-stack">
@@ -978,7 +993,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">07</span>
+            <span class="item-num">04</span>
             <a href="https://ajorge2.github.io/VariantGrid/" target="_blank" rel="noopener">VariantGrid</a>
           </span>
           <div class="item-stack">
@@ -1011,7 +1026,7 @@
         </div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">08</span>
+            <span class="item-num">05</span>
             <a href="https://site--demandmap--74wvcb9qzxr6.code.run/clustering_explorer.html" target="_blank" rel="noopener">DemandMap</a>
           </span>
           <div class="item-stack">
