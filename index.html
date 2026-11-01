@@ -189,18 +189,6 @@
       align-items: baseline;
       gap: 10px;
     }
-    section > h2 .h2-num {
-      color: var(--accent);
-      font-variant-numeric: tabular-nums;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-    section > h2 .h2-rule {
-      flex: 0 0 36px;
-      height: 1px;
-      background: var(--accent);
-      margin: 0 2px;
-    }
 
     /* ---------- items (2-col grid: left-margin metadata) ---------- */
     .item {
@@ -269,6 +257,14 @@
       display: flex;
       align-items: baseline;
       gap: 16px;
+    }
+    .college-title { flex-wrap: wrap; }
+    .college-location {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: normal;
+      color: var(--muted);
     }
     .item-num {
       font-family: var(--font-mono);
@@ -575,7 +571,6 @@
           <span class="sep">·</span>
           <a href="https://www.linkedin.com/in/andrew-jorge-309a99219" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-        <div class="status"><span class="status-label">Availability</span>Open to Applied AI engineering and AI research roles</div>
       </div>
     </header>
 
@@ -587,7 +582,7 @@
     </div>
 
     <section>
-      <h2><span class="h2-num">01</span><span class="h2-rule"></span>Experience &amp; Education</h2>
+      <h2>Experience &amp; Education</h2>
 
       <div class="item item-current">
         <div class="col-content">
@@ -628,14 +623,13 @@
       <div class="item">
         <div class="item-meta-col">
           Aug 2021<br/>May 2025
-          <span class="meta-label">Education</span>
         </div>
         <div class="col-content">
-          <div class="item-title">Bowdoin College</div>
-          <div class="item-role">B.A., Computer Science &amp; Mathematics, double major · Brunswick, ME</div>
+          <div class="item-title college-title">Bowdoin College <span class="college-location">Brunswick, ME</span></div>
+          <div class="item-role">B.A., Computer Science &amp; Mathematics, double major</div>
           <div class="item-body" style="margin-top: 16px;">
             <p>
-              A few courses that shaped how I build, less the syllabus, more what stuck:
+              A few courses that shaped how I think:
             </p>
           </div>
           <dl class="course-list">
@@ -661,23 +655,19 @@
             </dd>
           </dl>
           <p class="course-more">
-            <strong>Further coursework</strong> &nbsp; Deep Learning in Computer Vision · Statistics · Optimization
+            <strong>Further coursework</strong> &nbsp; Deep Learning in Computer Vision, Statistics, Optimization, and more
           </p>
         </div>
       </div>
     </section>
 
     <section class="work-section">
-      <h2><span class="h2-num">02</span><span class="h2-rule"></span>Selected Work</h2>
+      <h2>Selected Work</h2>
 
       <div class="item">
-        <div class="item-meta-col">
-          2026
-          <span class="meta-label">Applied AI research</span>
-        </div>
+        <div class="item-meta-col" aria-hidden="true"></div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">01</span>
             <a href="https://ajorge2.github.io/SQLHarness/" target="_blank" rel="noopener">SQLHarness</a>
           </span>
           <div class="item-stack">
@@ -711,13 +701,9 @@
       </div>
 
       <div class="item">
-        <div class="item-meta-col">
-          2026
-          <span class="meta-label">Live</span>
-        </div>
+        <div class="item-meta-col" aria-hidden="true"></div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">02</span>
             <a href="https://site--codearchitect--74wvcb9qzxr6.code.run/" target="_blank" rel="noopener">CodeArchitect</a>
           </span>
           <div class="item-stack">
@@ -768,13 +754,9 @@
       </div>
 
       <div class="item">
-        <div class="item-meta-col">
-          2026
-          <span class="meta-label">Live</span>
-        </div>
+        <div class="item-meta-col" aria-hidden="true"></div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">07</span>
             <a href="https://github.com/ajorge2/markets-project" target="_blank" rel="noopener">Credit Stress Predictor</a>
           </span>
           <div class="item-stack">
@@ -807,34 +789,16 @@
               idempotent, crash-recoverable loaders.
             </p>
           </div>
-          <div class="item-figures">
-            <figure>
-              <a href="https://github.com/ajorge2/markets-project" target="_blank" rel="noopener">
-                <img src="assets/credit-stress-example.svg" alt="" onerror="this.closest('figure').remove();" />
-              </a>
-              <figcaption>
-                <span class="fig-num">Fig. 01</span>
-                <span class="fig-sep">/</span>
-                <span>Illustrative architecture · no market observations displayed</span>
-              </figcaption>
-            </figure>
-
-          </div>
           <div class="item-links">
-            <span>Archived demo · source available</span>
             <a href="https://github.com/ajorge2/markets-project" target="_blank" rel="noopener">Source</a>
           </div>
         </div>
       </div>
 
       <div class="item">
-        <div class="item-meta-col">
-          2026
-          <span class="meta-label">Open source</span>
-        </div>
+        <div class="item-meta-col" aria-hidden="true"></div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">03</span>
             <a href="https://site--orcview--764vq9x779wv.code.run/" target="_blank" rel="noopener">OrcView</a>
           </span>
           <div class="item-stack">
@@ -869,13 +833,9 @@
       </div>
 
       <div class="item">
-        <div class="item-meta-col">
-          2026
-          <span class="meta-label">Full-stack</span>
-        </div>
+        <div class="item-meta-col" aria-hidden="true"></div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">08</span>
             <a href="https://github.com/ajorge2/learning-accelerator" target="_blank" rel="noopener">Learning Accelerator</a>
           </span>
           <div class="item-stack">
@@ -897,20 +857,15 @@
             </p>
           </div>
           <div class="item-links">
-            <span>Archived demo · source available</span>
             <a href="https://github.com/ajorge2/learning-accelerator" target="_blank" rel="noopener">Source</a>
           </div>
         </div>
       </div>
 
       <div class="item">
-        <div class="item-meta-col">
-          2026
-          <span class="meta-label">Data infra</span>
-        </div>
+        <div class="item-meta-col" aria-hidden="true"></div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">04</span>
             <a href="https://github.com/ajorge2/ETL-agent-pipeline" target="_blank" rel="noopener">AgenticETL</a>
           </span>
           <div class="item-stack">
@@ -936,13 +891,9 @@
       </div>
 
       <div class="item">
-        <div class="item-meta-col">
-          2026
-          <span class="meta-label">Experimentation</span>
-        </div>
+        <div class="item-meta-col" aria-hidden="true"></div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">05</span>
             <a href="https://ajorge2.github.io/VariantGrid/" target="_blank" rel="noopener">VariantGrid</a>
           </span>
           <div class="item-stack">
@@ -969,13 +920,9 @@
       </div>
 
       <div class="item">
-        <div class="item-meta-col">
-          2026
-          <span class="meta-label">Customer research</span>
-        </div>
+        <div class="item-meta-col" aria-hidden="true"></div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">06</span>
             <a href="https://site--demandmap--74wvcb9qzxr6.code.run/clustering_explorer.html" target="_blank" rel="noopener">DemandMap</a>
           </span>
           <div class="item-stack">
@@ -1003,13 +950,9 @@
       </div>
 
       <div class="item">
-        <div class="item-meta-col">
-          2025
-          <span class="meta-label">Statistical analysis</span>
-        </div>
+        <div class="item-meta-col" aria-hidden="true"></div>
         <div class="col-content">
           <span class="item-title">
-            <span class="item-num">09</span>
             <a href="https://ajorge2.github.io/Brazil-Crash-Severity/" target="_blank" rel="noopener">Brazil Crash Severity</a>
           </span>
           <div class="item-stack">
@@ -1038,11 +981,11 @@
       <div class="elsewhere-grid">
         <figure class="crosshair">
           <img src="assets/img-8385.jpg" alt="" onerror="this.parentElement.remove();" />
-          <figcaption>N. Peru, '19</figcaption>
+          <figcaption>Peru, '19</figcaption>
         </figure>
         <figure class="crosshair">
           <img src="assets/img-0169.jpg" alt="" onerror="this.parentElement.remove();" />
-          <figcaption>Summer</figcaption>
+          <figcaption>My dog Summer</figcaption>
         </figure>
       </div>
     </div>
