@@ -6,7 +6,7 @@
   <title>Andrew Jorge · Applied AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Maitree:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg:         #171411;
@@ -21,9 +21,10 @@
       --warm:       #ce8b76;
       --warm-dim:   rgba(206, 139, 118, 0.16);
 
-      --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-      --font-mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
-      --font-display: "Newsreader", "Iowan Old Style", "Apple Garamond", Georgia, serif;
+      --font-sans: "Maitree", "Iowan Old Style", "Apple Garamond", Georgia, serif;
+      --font-mono: "Maitree", "Iowan Old Style", "Apple Garamond", Georgia, serif;
+      --font-display: "Maitree", "Iowan Old Style", "Apple Garamond", Georgia, serif;
+      --font-section: "DM Mono", "SFMono-Regular", Consolas, monospace;
     }
 
     * { box-sizing: border-box; }
@@ -78,8 +79,8 @@
       gap: 20px;
     }
     .avatar {
-      width: 72px;
-      height: 72px;
+      width: 144px;
+      height: 144px;
       border-radius: 0;
       object-fit: cover;
       flex-shrink: 0;
@@ -176,7 +177,7 @@
       display: none;
     }
     section > h2 {
-      font-family: var(--font-mono);
+      font-family: var(--font-section);
       font-size: 10px;
       font-weight: 400;
       text-transform: uppercase;
@@ -545,7 +546,7 @@
     @media (max-width: 600px) {
       main { padding: 56px 22px 80px; }
       header { gap: 16px; align-items: flex-start; }
-      .avatar { width: 60px; height: 60px; }
+      .avatar { width: 120px; height: 120px; }
       header h1 { font-size: 40px; line-height: 1.0; }
       .item-title { font-size: 22px; }
       .intro { font-size: 17px; }
@@ -570,7 +571,7 @@
           <a href="https://github.com/ajorge2" target="_blank" rel="noopener">GitHub</a>
           <span class="sep">·</span>
           <a href="https://www.linkedin.com/in/andrew-jorge-309a99219" target="_blank" rel="noopener">LinkedIn</a>
-          <span>·</span>
+          <span class="sep">·</span>
           <a href="https://drive.google.com/file/d/1ZcBlPYsOZ2ZRSmi2skAobJfPsjYkxqWT/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
         </div>
       </div>
@@ -593,18 +594,12 @@
           <p class="experience-lede">Some of what I did:</p>
           <div class="item-body" style="margin-top: 16px;">
             <p>
-              Built an interactive assumption tester in R for the private equity valuation
-              team: analysts slide pricing and entry/exit variables and watch valuation,
-              leveraged-buyout returns, and assumption drift recompute in ~1ms, spanning
-              49 pricing-assumption combinations, 36 entry-and-exit combinations, and 5
-              model versions, with a browser-side Excel upload and field-tagging that
-              streamlines translation into CSV. Demoed it to a VP, who deemed it
-              fit-for-purpose.
-            </p>
-            <p>
               Automated a RAG Q&amp;A tool with exact citations for the Capital
               Markets team's diligence, citations served from cache before
-              touching raw sources, so every answer is traceable. Shipped an earnings
+              touching raw sources, so every answer is traceable.
+            </p>
+            <p>
+              Shipped an earnings
               report summarizer for the investment team, conditioned on 50+ prior
               analyst-written summaries so output matches house style, the difference
               between a tool analysts adopt and one they ignore.
@@ -617,6 +612,15 @@
               against the chunks the model actually cited. Designed a RAGAS evaluation
               framework over a labeled Q&amp;A set (10% deliberately declinable) to
               catch over-confident answers.
+            </p>
+            <p>
+              Built an interactive assumption tester in R for the private equity valuation
+              team: analysts slide pricing and entry/exit variables and watch valuation,
+              leveraged-buyout returns, and assumption drift recompute in ~1ms, spanning
+              49 pricing-assumption combinations, 36 entry-and-exit combinations, and 5
+              model versions, with a browser-side Excel upload and field-tagging that
+              streamlines translation into CSV. Demoed it to a VP, who deemed it
+              fit-for-purpose.
             </p>
           </div>
         </div>
