@@ -216,14 +216,15 @@
     .work-section { display: flex; flex-direction: column; }
     .work-section > h2 { order: 0; }
     .work-section > .item:nth-of-type(1) { order: 1; } /* SQLHarness */
-    .work-section > .item:nth-of-type(2) { order: 2; } /* CodeArchitect */
-    .work-section > .item:nth-of-type(4) { order: 3; } /* OrcView */
-    .work-section > .item:nth-of-type(6) { order: 4; } /* AgenticETL */
-    .work-section > .item:nth-of-type(7) { order: 5; } /* VariantGrid */
-    .work-section > .item:nth-of-type(8) { order: 6; } /* DemandMap */
-    .work-section > .item:nth-of-type(3) { order: 7; } /* Credit Stress Predictor */
-    .work-section > .item:nth-of-type(5) { order: 8; } /* Learning Accelerator */
-    .work-section > .item:nth-of-type(9) { order: 9; } /* Brazil Crash Severity */
+    .work-section > .item:nth-of-type(2) { order: 2; } /* Context Saver */
+    .work-section > .item:nth-of-type(3) { order: 3; } /* CodeArchitect */
+    .work-section > .item:nth-of-type(5) { order: 4; } /* OrcView */
+    .work-section > .item:nth-of-type(7) { order: 5; } /* AgenticETL */
+    .work-section > .item:nth-of-type(8) { order: 6; } /* VariantGrid */
+    .work-section > .item:nth-of-type(9) { order: 7; } /* DemandMap */
+    .work-section > .item:nth-of-type(4) { order: 8; } /* Credit Stress Predictor */
+    .work-section > .item:nth-of-type(6) { order: 9; } /* Learning Accelerator */
+    .work-section > .item:nth-of-type(10) { order: 10; } /* Brazil Crash Severity */
     .item-meta-col {
       font-family: var(--font-mono);
       font-size: 10px;
@@ -702,6 +703,36 @@
             <a href="https://andrewjorge.com/SQLHarness/share.html" target="_blank" rel="noopener">Research brief</a>
             <a href="https://codearchitect.andrewjorge.com/mcp/sqlharness/" target="_blank" rel="noopener">Prototype MCP</a>
             <a href="https://github.com/ajorge2/SQLHarness" target="_blank" rel="noopener">Prototype source</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" id="context-saver">
+        <div class="item-meta-col" aria-hidden="true"></div>
+        <div class="col-content">
+          <span class="item-title">
+            <a href="https://github.com/ajorge2/context-saver" target="_blank" rel="noopener">Context Saver</a>
+          </span>
+          <div class="item-stack">
+            Codex · Claude Code · macOS
+          </div>
+          <div class="item-body">
+            <p>
+              I built Context Saver so coding agents can recover earlier project decisions
+              when long chats are summarized. The plugin indexes connected chats locally in
+              the background and retrieves short excerpts the agent can cite when it needs
+              an earlier decision. The local browser viewer lets developers browse topics,
+              inspect original messages, and pause or remove connections. In a paired test
+              of six simulated release incidents, Codex got <strong>33 of 36 required
+              decision details right with Context Saver, up from 19 of 36</strong>, after
+              summarizing each chat three times. Local lookups averaged 243 ms in that round.
+              Full answers took 11.67 seconds longer and used 45,786 more tokens on average,
+              including 15,688 uncached input tokens.
+            </p>
+          </div>
+          <div class="item-links">
+            <a href="https://github.com/ajorge2/context-saver#install-on-macos" target="_blank" rel="noopener">Install plugin</a>
+            <a href="https://github.com/ajorge2/context-saver#open-the-viewer" target="_blank" rel="noopener">Open the viewer</a>
           </div>
         </div>
       </div>
