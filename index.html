@@ -333,6 +333,8 @@
     .item-body p:first-child { margin-top: 0; }
     .item-body p:last-child  { margin-bottom: 0; }
     .item-body a { color: var(--accent); text-underline-offset: 0.15em; }
+    .experience-bullets { padding-left: 1.2em; }
+    .experience-bullets li + li { margin-top: 14px; }
     .item-figures {
       margin-top: 24px;
       display: grid;
@@ -594,37 +596,26 @@
           <div class="item-title">Stone Point Capital</div>
           <div class="item-role">Applied AI Engineer</div>
           <p class="experience-lede">Some of what I did:</p>
-          <div class="item-body" style="margin-top: 16px;">
-            <p>
-              Automated a RAG Q&amp;A tool with exact citations for the Capital
-              Markets team's diligence, citations served from cache before
-              touching raw sources, so every answer is traceable.
-            </p>
-            <p>
-              Shipped an earnings
-              report summarizer for the investment team, conditioned on 50+ prior
-              analyst-written summaries so output matches house style, the difference
-              between a tool analysts adopt and one they ignore.
-            </p>
-            <p>
-              Built a working RAG prototype over internal IT documentation: hybrid
-              BM25 + FAISS dense retrieval fused by reciprocal rank fusion, a
-              cross-encoder second pass that re-reads the top 40 passages and keeps the 5
-              most relevant, and a confidence gate that declines below 0.60, scored
-              against the chunks the model actually cited. Designed a RAGAS evaluation
-              framework over a labeled Q&amp;A set (10% deliberately declinable) to
-              catch over-confident answers.
-            </p>
-            <p>
-              Built an interactive assumption tester in R for the private equity valuation
-              team: analysts slide pricing and entry/exit variables and watch valuation,
-              leveraged-buyout returns, and assumption drift recompute in ~1ms, spanning
-              49 pricing-assumption combinations, 36 entry-and-exit combinations, and 5
-              model versions, with a browser-side Excel upload and field-tagging that
-              streamlines translation into CSV. Demoed it to a VP, who deemed it
-              fit-for-purpose.
-            </p>
-          </div>
+          <ul class="item-body experience-bullets" style="margin-top: 16px;">
+            <li>
+              Automated a document Q&amp;A tool for the Capital Markets team’s diligence,
+              with exact citations so analysts can verify answers against the original sources.
+            </li>
+            <li>
+              Shipped an earnings report summarizer for the investment team, using 50+ prior
+              analyst-written summaries to match the team’s house style.
+            </li>
+            <li>
+              Built a prototype that answers questions from internal IT documentation and
+              declines when supporting evidence is weak. Designed an evaluation framework
+              with questions it should decline to check for overconfident answers.
+            </li>
+            <li>
+              Built an interactive valuation tool that lets private equity analysts change
+              pricing assumptions and immediately see the effects on valuations and investment
+              returns. Presented it to a VP, who judged it fit for purpose.
+            </li>
+          </ul>
         </div>
       </div>
 
