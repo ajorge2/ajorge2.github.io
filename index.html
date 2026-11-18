@@ -718,16 +718,19 @@
           </div>
           <div class="item-body">
             <p>
-              I built Context Saver so coding agents can recover earlier project decisions
-              when long chats are summarized. The plugin indexes connected chats locally in
-              the background and retrieves short excerpts the agent can cite when it needs
-              an earlier decision. The local browser viewer lets developers browse topics,
-              inspect original messages, and pause or remove connections. In a paired test
-              of six simulated release incidents, Codex got <strong>33 of 36 required
-              decision details right with Context Saver, up from 19 of 36</strong>, after
-              summarizing each chat three times. Local lookups averaged 243 ms in that round.
-              Full answers took 11.67 seconds longer and used 45,786 more tokens on average,
-              including 15,688 uncached input tokens.
+              I built Context Saver so coding agents can recover project decisions from earlier
+              chats, even after long conversations have been compacted. The plugin indexes
+              connected chats locally in the background and retrieves short excerpts the agent
+              can cite. The local browser viewer lets developers browse chats by topic, verify
+              decisions against the original messages, and pause or remove connections. I gave
+              Codex the same six simulated software release incidents with and without Context
+              Saver. Each response was scored against decisions recorded earlier in the chat.
+              The six points per incident covered what action to take, what it targeted, how
+              widely it applied, what order to take the steps in, what to verify before proceeding,
+              and which earlier rule applied. After Codex compacted each chat three times, it
+              scored <strong>33 out of 36 with Context Saver, up from 19 without it</strong>.
+              Local lookups averaged 243 ms in that round. Full answers took 11.67 seconds longer
+              and used 45,786 more tokens on average, including 15,688 uncached input tokens.
             </p>
           </div>
           <div class="item-links">
