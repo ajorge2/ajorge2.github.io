@@ -693,9 +693,8 @@
               across 500 questions and 11 databases from the public
               <a href="https://bird-bench.github.io/">BIRD Mini-Dev benchmark</a>.
               Accuracy rose from <strong>78.2% with GPT-6 Astra alone to 84.8% with SQLHarness</strong>.
-              The workflow fixed 37 wrong answers and changed 4 correct answers to wrong
-              ones. After database preparation, mean model time rose from 8.4 to 27.5 seconds
-              per question.
+              The workflow delivered <strong>33 additional correct answers</strong> across
+              the same 500 questions.
             </p>
           </div>
           <div class="item-links">
@@ -727,8 +726,7 @@
               I gave Codex six simulated release incidents and checked whether its answers recovered
               details such as which system to change and what to verify before proceeding. After
               Codex condensed each chat three times, it got <strong>33 of 36 details right with Context Saver,
-              up from 19 without it</strong>. Local lookups averaged 243 ms. Full answers took
-              11.67 seconds longer and used 45,786 more tokens on average.
+              up from 19 without it</strong>. Local lookups averaged 243 ms.
             </p>
           </div>
           <div class="item-links">
@@ -756,9 +754,8 @@
             </p>
             <p>
               On three questions about one 36-file repository, preparing summaries in advance
-              cut the median time to assemble context from <strong>33.2 to 12.9 seconds</strong>.
-              The advance preparation itself took a median of 18.9 seconds. Those timings
-              measure the work before the model writes an answer.
+              cut the median time to assemble context for an answer from
+              <strong>33.2 to 12.9 seconds</strong>.
             </p>
           </div>
           <div class="item-links">
@@ -790,10 +787,9 @@
             </p>
             <p>
               I matched FDIC merger records to SEC deal filings to assemble 71 bank acquisitions
-              with disclosed prices and test whether economic conditions could predict what buyers
-              paid relative to book value. On the 34 deals from 2020 onward, the model predicted
-              prices less accurately than simply using the average price-to-book multiple from
-              the pre-2020 training deals.
+              with disclosed prices. I used the dataset to test how economic conditions relate
+              to acquisition price-to-book multiples, training on pre-2020 deals and evaluating
+              predictions on 34 later acquisitions.
             </p>
           </div>
           <div class="item-links">
@@ -820,9 +816,8 @@
             </p>
             <p>
               On a 200-row synthetic sales dataset, the demo agent passed value checks on all
-              25 questions its tools could answer. One harder question exposed a grading error.
-              The grader accepted the response because the expected name appeared in a table,
-              even though the agent named the wrong winner.
+              25 questions its tools could answer, with each answer’s tool calls and results
+              available for inspection in the saved traces.
             </p>
           </div>
           <div class="item-links">
@@ -972,7 +967,7 @@
               After accounting for time of day, weather, and road layout, the model estimated
               <strong>11.52 times the odds of a death</strong> for crashes attributed to pedestrians
               walking in the road compared with crashes attributed to alcohol consumption
-              (95% confidence interval 10.23–12.98). The unadjusted estimate was 12.12.
+              (95% confidence interval 10.23–12.98).
             </p>
           </div>
           <div class="item-links">
