@@ -718,19 +718,17 @@
           </div>
           <div class="item-body">
             <p>
-              I built Context Saver so coding agents can recover project decisions from earlier
-              chats, even after long conversations have been compacted. The plugin indexes
-              connected chats locally in the background and retrieves short excerpts the agent
-              can cite. The local browser viewer lets developers browse chats by topic, verify
-              decisions against the original messages, and pause or remove connections. I gave
-              Codex the same six simulated software release incidents with and without Context
-              Saver. Each response was scored against decisions recorded earlier in the chat.
-              The six points per incident covered what action to take, what it targeted, how
-              widely it applied, what order to take the steps in, what to verify before proceeding,
-              and which earlier rule applied. After Codex compacted each chat three times, it
-              scored <strong>33 out of 36 with Context Saver, up from 19 without it</strong>.
-              Local lookups averaged 243 ms in that round. Full answers took 11.67 seconds longer
-              and used 45,786 more tokens on average, including 15,688 uncached input tokens.
+              I built Context Saver for developers whose coding agents need to recover earlier
+              project decisions after a long chat gets condensed. It indexes the chats a developer
+              connects and gives the agent short excerpts it can cite. Developers can use the
+              local viewer to browse by topic, check the original messages, and manage connections.
+            </p>
+            <p>
+              I gave Codex six simulated release incidents and checked whether its answers recovered
+              details such as which system to change and what to verify before proceeding. After
+              Codex condensed each chat three times, it got <strong>33 of 36 details right with Context Saver,
+              up from 19 without it</strong>. Local lookups averaged 243 ms. Full answers took
+              11.67 seconds longer and used 45,786 more tokens on average.
             </p>
           </div>
           <div class="item-links">
@@ -747,41 +745,20 @@
             <a href="https://codearchitect.andrewjorge.com/" target="_blank" rel="noopener">CodeArchitect</a>
           </span>
           <div class="item-stack">
-            Node · Express · React · Vite · tree-sitter · Anthropic API
+            Node · Express · React · Vite · tree-sitter · OpenAI API
           </div>
           <div class="item-body">
             <p>
-              An interactive tool for reading a codebase by its structure. Every file is
-              parsed via tree-sitter into nested, selectable pieces, function, block, and
-              expression, drawn over the source and chunked live, aware of structure
-              boundaries down to a single character. Three sliders shape the slicing:
-              granularity, how deep to split; depth spread, how far apart the chosen depths
-              may sit; and context detail, how finely large files are summarized for the AI
-              under a word-count cap.
+              I built CodeArchitect for developers trying to understand a line or function
+              in an unfamiliar codebase. Select the code and ask a question. CodeArchitect
+              locates the selection in the file’s syntax tree, adds summaries of nearby code
+              and folders, and reuses cached summaries tied to the source text as you explore.
             </p>
             <p>
-              Each piece carries a stable identity derived from the tree rather than the
-              current zoom, so understanding accumulates across re-chunking instead of being
-              thrown away. Meanings are computed recursively and cached against those
-              identities, so a snippet's standalone meaning is computed once and reused
-              wherever it recurs, and different slicings of a file share their common
-              ancestors, then folded with surrounding scope up through the folder tree so an
-              answer about a single line can draw on the whole project.
-            </p>
-            <p>
-              Question-answering is retrieval the user steers. The selected piece is the
-              unit, so there is no vector database; the access pattern is an exact-key lookup
-              along one path rather than a similarity search. The meaning cache is
-              content-addressed and self-invalidating, since edited code yields new keys and
-              stale entries are simply never read again, backed by a plain on-disk file with
-              an in-memory layer rather than a standing service. Two Anthropic models are
-              routed by the weight of each read and write request.
-            </p>
-            <p>
-              The public analysis freezes concept discovery on 685 diffs from 668 repository
-              families, tests 151 components from 132 unseen families, and preserves the
-              decision not to lower the acceptance threshold after human-reviewed precision
-              missed its pre-registered guardrail.
+              On three questions about one 36-file repository, preparing summaries in advance
+              cut the median time to assemble context from <strong>33.2 to 12.9 seconds</strong>.
+              The advance preparation itself took a median of 18.9 seconds. Those timings
+              measure the work before the model writes an answer.
             </p>
           </div>
           <div class="item-links">
@@ -805,29 +782,18 @@
           </div>
           <div class="item-body">
             <p>
-              A point-in-time credit stress monitor for 13 financial-services sub-sectors,
-              deployed end-to-end on Northflank and Vercel. ~25,000 macro observations
-              from FRED and yfinance, carrying full revision history back to 1990 and
-              updating live. Dual-timestamp Postgres eliminates look-ahead bias from FRED
-              revisions, so the stress picture for any past date is rebuilt using only the
-              data published by then, never peeking at the future.
+              I built a dashboard that lets analysts see what credit conditions looked like on
+              a given date across 13 financial-services subsectors. It records when economic data
+              was published as well as the period it describes, so historical views exclude later
+              revisions of the observations they use. Analysts can adjust indicator weights to see
+              how their assumptions change each score.
             </p>
             <p>
-              182 per-sector indicator weights, each derived empirically via OLS
-              regression and exposed as a live slider, so the model can be re-weighted
-              and replayed at query time.
-            </p>
-            <p>
-              Designed an entity-resolution pipeline across FDIC and SEC EDGAR to
-              assemble a dataset no single source publishes: 71 bank acquisitions
-              enriched with real deal prices, resolved out of ~11,300 merger records.
-              Then validated a deal-pricing model out-of-sample, trained on pre-2020
-              deals, tested on later ones, and reported the honest null: macro
-              conditions alone do not predict deal pricing (R² ≈ 0.09).
-            </p>
-            <p>
-              ~5,000-line vanilla JS dashboard over a 20-endpoint FastAPI backend, with
-              idempotent, crash-recoverable loaders.
+              I matched FDIC merger records to SEC deal filings to assemble 71 bank acquisitions
+              with disclosed prices and test whether economic conditions could predict what buyers
+              paid relative to book value. On the 34 deals from 2020 onward, the model predicted
+              prices less accurately than simply using the average price-to-book multiple from
+              the pre-2020 training deals.
             </p>
           </div>
           <div class="item-links">
@@ -843,26 +809,20 @@
             <a href="https://orcview.andrewjorge.com/" target="_blank" rel="noopener">OrcView</a>
           </span>
           <div class="item-stack">
-            Python · Flask · SSE · SQLite · Anthropic API · vanilla JS
+            Python · Flask · SSE · SQLite · OpenAI · Anthropic
           </div>
           <div class="item-body">
             <p>
-              An observability layer and SDK for LLM agents that turns any Python
-              function into a tool, building its schema from type hints and the docstring.
-              Real-time ReAct visualization and SSE streaming log every event, 10 kinds
-              in all, including tool calls, model calls, errors, and stop conditions,
-              with cost tracked to $0.000001.
+              I built OrcView so developers can see where an AI agent went wrong. It turns
+              typed Python functions into tools and lets agents delegate work. A live timeline
+              shows model responses, tool inputs and results, and where each run stopped.
+              Developers can follow delegated runs and replay saved traces to investigate.
             </p>
             <p>
-              O(1) cycle detection threads an immutable frozenset call chain through every
-              sub-agent invocation, preventing recursive loops without locks and without
-              blocking parallel sub-agents; config is snapshotted at run start so mid-flight
-              edits never corrupt a run. SQLite persists versioned run history, so agent
-              behavior can be compared across model, prompt, and tool changes. Hardened on
-              a data-analyst agent (7 tools, 3 chart types) that decides on its own when a
-              chart conveys more than prose. The saved evaluation exposes where the agent
-              fails when its tool surface cannot express the requested analysis, including
-              a documented grader false positive.
+              On a 200-row synthetic sales dataset, the demo agent passed value checks on all
+              25 questions its tools could answer. One harder question exposed a grading error.
+              The grader accepted the response because the expected name appeared in a table,
+              even though the agent named the wrong winner.
             </p>
           </div>
           <div class="item-links">
@@ -881,21 +841,18 @@
             <a href="https://github.com/ajorge2/learning-accelerator" target="_blank" rel="noopener">Learning Accelerator</a>
           </span>
           <div class="item-stack">
-            FastAPI · SQLite · OpenAI structured outputs · Vite · D3.js · Algolia
+            FastAPI · SQLite · OpenAI structured outputs · Vite · D3.js
           </div>
           <div class="item-body">
             <p>
-              A personal knowledge-graph app for mapping a subject as a network of ideas
-              and relationships. The model generates the initial graph from notes or an
-              uploaded PDF, then expands and corrects it via a typed GraphDelta diff
-              schema (add, update, delete) rather than regenerating the full graph.
+              I built Learning Accelerator to help people study a new subject from scattered
+              notes or a dense PDF. The app uses the material and the learner’s goal to make
+              an editable map of concepts and how they connect.
             </p>
             <p>
-              A reflection mode walks the graph breadth-first, prompting the user to
-              articulate each concept; those articulations feed back into the next
-              graph update, closing the loop between user understanding and graph
-              structure. Every model call is typed via Pydantic schemas, so malformed
-              responses fail loudly instead of silently corrupting state.
+              Reflection mode walks from the main topic outward and asks the learner to explain
+              each idea in their own words. Based on those answers, the model proposes specific
+              additions, edits, or deletions. The learner chooses which changes to apply.
             </p>
           </div>
           <div class="item-links">
@@ -915,15 +872,15 @@
           </div>
           <div class="item-body">
             <p>
-              An event-streaming pipeline with LLM-powered schema repair and
-              human-in-the-loop approval. Kafka ingests events; Great Expectations
-              validates them; a LangGraph agent proposes targeted repairs for failures;
-              a FastAPI dashboard lets a human (or an optional autopilot) approve or
-              reject each proposal.
+              I built AgenticETL so data operators can review incoming signup records that fail
+              validation. When Kafka delivers a malformed record, Claude proposes a repair, such
+              as converting a numeric string to an integer. It can also recommend rejection
+              when a required user ID is missing.
             </p>
             <p>
-              Postgres is the coordination layer and the audit trail. Every event,
-              every agent proposal, every human decision is persisted and replayable.
+              The dashboard shows the original record, the proposed change, and its reason.
+              Operators can approve or reject the proposal, or edit the record and validate it
+              again. PostgreSQL keeps the stored record, proposal, and review decision together.
             </p>
           </div>
           <div class="item-links">
@@ -943,15 +900,17 @@
           </div>
           <div class="item-body">
             <p>
-              An evidence-first experimentation platform for taking a product hypothesis to
-              an auditable decision: typed multivariate variants, versioned assignment,
-              exposure logging, and an operator workflow for launch, data health, and rollback.
+              I built VariantGrid to help product teams decide which changes to ship. It freezes
+              the experiment settings at launch, keeps returning users on the same variant within
+              that version, and counts outcomes only after a matching exposure. It withholds a
+              recommendation when data checks fail, such as when a variant receives far fewer users
+              than planned.
             </p>
             <p>
-              It blocks readouts when sample-ratio mismatch or duplicate, missing, late,
-              reordered, or cross-version events compromise the data. Validated 100%
-              repeat-subject stickiness across three 1M-assignment policies and calibrated
-              10K A/A simulations to a 5.13% false-positive rate with 94.87% interval coverage.
+              In 10,000 simulated experiments with two identical variants, it flagged a
+              difference <strong>5.13% of the time</strong>, close to the intended 5%
+              false-positive rate. Its 95% confidence intervals contained the true effect
+              in 94.87% of those simulations.
             </p>
           </div>
           <div class="item-links">
@@ -972,15 +931,17 @@
           </div>
           <div class="item-body">
             <p>
-              A buyer-research tool that turns CRM and CSV data into overlapping customer
-              segments with cached embeddings and Fuzzy C-Means, keeping every account
-              represented instead of forcing it into a single persona.
+              I built DemandMap to help teams decide which customer groups to research and
+              what problems to investigate. It groups customer records by meaning, allows an
+              account to fit multiple profiles, and shows the source rows behind each group.
+              For a selected profile, it groups news articles covering the same event and proposes
+              customer problems to investigate, with citations.
             </p>
             <p>
-              It pairs those segments with a citation-backed market-sensing workflow for
-              buyer pains, and includes a pre-registered guided-vs.-self-serve study with
-              a 40% baseline, 25-point minimum detectable lift, 80% power, and a 5-point
-              request-success guardrail.
+              Of 21 completed research attempts after setup, 20 produced reports that passed
+              checks for citations and article coverage. Across seven successful runs timed one
+              at a time, a prepared customer profile became a report ready for review in a
+              median of <strong>2 minutes 21 seconds</strong>.
             </p>
           </div>
           <div class="item-links">
@@ -1002,12 +963,16 @@
           </div>
           <div class="item-body">
             <p>
-              An observational analysis of 463,152 Brazilian crash records. An AIC-selected
-              logistic model estimated that crashes attributed to pedestrians walking in the
-              road had 11.52 times the adjusted odds of fatality versus alcohol-related crashes
-              in the 404,508-row modeled cohort (95% CI 10.23–12.98). Adjustment for time of
-              day, road delineation, and weather reduced the estimate by 4.9% without turning
-              the association into a causal claim.
+              I analyzed 463,152 police-reported crashes in Brazil from 2017 to 2023 to see which
+              circumstances were associated with a fatal outcome once a crash had occurred. I
+              compared five logistic regression models using the 404,508 records with a reported
+              road layout.
+            </p>
+            <p>
+              After accounting for time of day, weather, and road layout, the model estimated
+              <strong>11.52 times the odds of a death</strong> for crashes attributed to pedestrians
+              walking in the road compared with crashes attributed to alcohol consumption
+              (95% confidence interval 10.23–12.98). The unadjusted estimate was 12.12.
             </p>
           </div>
           <div class="item-links">
