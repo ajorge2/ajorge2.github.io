@@ -331,6 +331,7 @@
     .item-body p { margin: 12px 0; }
     .item-body p:first-child { margin-top: 0; }
     .item-body p:last-child  { margin-bottom: 0; }
+    .item-body a { color: var(--accent); text-underline-offset: 0.15em; }
     .item-figures {
       margin-top: 24px;
       display: grid;
@@ -677,18 +678,20 @@
             <a href="https://andrewjorge.com/SQLHarness/" target="_blank" rel="noopener">SQLHarness</a>
           </span>
           <div class="item-stack">
-            Python · SQLite · SQLGlot · BIRD Mini-Dev
+            Python · SQLite · SQLGlot
           </div>
           <div class="item-body">
             <p>
-              I built a system to catch SQL that runs but answers the wrong business question.
-              It reviews a model’s first draft, ranks possible joins using column similarity
-              and how relevant each table is to the question, and uses actual database values
-              to guide repairs.
+              I built SQLHarness to turn plain-English questions about a database into SQL.
+              A language model writes the first query. SQLHarness ranks possible joins to
+              relevant tables the draft may have missed and uses actual database values to
+              guide repairs.
             </p>
             <p>
-              In a development benchmark of 500 BIRD Mini-Dev questions across 11 databases, execution accuracy rose
-              from <strong>78.2% with GPT-6 Astra alone to 84.8% with SQLHarness</strong>.
+              In a development run, I measured how often the SQL returned the right answer
+              across 500 questions and 11 databases from the public
+              <a href="https://bird-bench.github.io/">BIRD Mini-Dev benchmark</a>.
+              Accuracy rose from <strong>78.2% with GPT-6 Astra alone to 84.8% with SQLHarness</strong>.
               The workflow fixed 37 wrong answers and changed 4 correct answers to wrong
               ones. After database preparation, mean model time rose from 8.4 to 27.5 seconds
               per question.
