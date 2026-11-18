@@ -677,32 +677,28 @@
             <a href="https://andrewjorge.com/SQLHarness/" target="_blank" rel="noopener">SQLHarness</a>
           </span>
           <div class="item-stack">
-            Python · MCP v2 · BIRD-SQL · SQLGlot · BGE · vector retrieval
+            Python · SQLite · SQLGlot · BIRD Mini-Dev
           </div>
           <div class="item-body">
             <p>
-              An NL-to-SQL research system that makes the path from a business question to
-              executable SQL inspectable. It parses an AMR-inspired intent graph, retrieves
-              SQL fragments, and uses a lightweight model to assemble a candidate query.
+              I built a system to catch SQL that runs but answers the wrong business question.
+              It reviews a model’s first draft, ranks possible joins using column similarity
+              and how relevant each table is to the question, and uses actual database values
+              to guide repairs.
             </p>
             <p>
-              Execution sits behind an MCP authority boundary with typed database tools,
-              SQLGlot AST and schema validation, read-only policy enforcement, timeouts,
-              sandboxed execution, bounded retry, and abstention. Cached traces expose both
-              successful queries and blocked mutations without requiring an API key.
-            </p>
-            <p>
-              A frozen five-query development comparison found the direct model correct on
-              4/5 and both structured variants correct on 3/5. The negative result is kept
-              public alongside the error decomposition: the current value is inspectability
-              and safety, not a claimed accuracy win.
+              In a development benchmark of 500 BIRD Mini-Dev questions across 11 databases, execution accuracy rose
+              from <strong>78.2% with GPT-6 Astra alone to 84.8% with SQLHarness</strong>.
+              The workflow fixed 37 wrong answers and changed 4 correct answers to wrong
+              ones. After database preparation, mean model time rose from 8.4 to 27.5 seconds
+              per question.
             </p>
           </div>
           <div class="item-links">
             <a href="https://andrewjorge.com/SQLHarness/" target="_blank" rel="noopener">Live analysis</a>
             <a href="https://andrewjorge.com/SQLHarness/share.html" target="_blank" rel="noopener">Research brief</a>
-            <a href="https://codearchitect.andrewjorge.com/mcp/sqlharness/" target="_blank" rel="noopener">MCP</a>
-            <a href="https://github.com/ajorge2/SQLHarness" target="_blank" rel="noopener">Source</a>
+            <a href="https://codearchitect.andrewjorge.com/mcp/sqlharness/" target="_blank" rel="noopener">Prototype MCP</a>
+            <a href="https://github.com/ajorge2/SQLHarness" target="_blank" rel="noopener">Prototype source</a>
           </div>
         </div>
       </div>
